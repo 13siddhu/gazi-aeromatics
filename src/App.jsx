@@ -1,17 +1,17 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './App.css';
-
 import { 
   Mail, Phone, Facebook, Instagram, Linkedin, Menu, X, ChevronRight, 
   Leaf, Award, Users, Factory, Shield, Heart, Zap, Globe, Star, ArrowUp, MapPin, CheckCircle
 } from 'lucide-react';
-
 
 const ModernAromatics = () => {
   const [activeSection, setActiveSection] = useState('home');
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [showScrollTop, setShowScrollTop] = useState(false);
+  const [openDropdown, setOpenDropdown] = useState(null); // Track open dropdown
+  const timeoutRef = useRef(null); // Reference for timeout
 
   useEffect(() => {
     const handleScroll = () => {
@@ -28,10 +28,27 @@ const ModernAromatics = () => {
     element?.scrollIntoView({ behavior: 'smooth' });
     setActiveSection(sectionId);
     setIsMenuOpen(false);
+    setOpenDropdown(null); // Close dropdown on section click
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current); // Clear any pending timeout
+    }
   };
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const handleMouseEnter = (itemId) => {
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current); // Clear timeout if re-entering
+    }
+    setOpenDropdown(itemId);
+  };
+
+  const handleMouseLeave = () => {
+    timeoutRef.current = setTimeout(() => {
+      setOpenDropdown(null); // Close dropdown after 500ms
+    }, 500); // 500ms delay
   };
 
   const industries = [
@@ -106,9 +123,33 @@ const ModernAromatics = () => {
   ];
 
   const navItems = [
-    { name: 'About Us', id: 'about-us' },
-    { name: 'Expertise', id: 'expertise' },
-    { name: 'Products', id: 'products' },
+    { 
+      name: 'About Us', 
+      id: 'about-us',
+      dropdown: [
+        'About Anandateertha Aromatics',
+        'Certifications'
+      ]
+    },
+    { 
+      name: 'Expertise', 
+      id: 'expertise',
+      dropdown: [
+        'Sourcing',
+        'Research and Innovation',
+        'Manufacturing Capabilities',
+        'Packaging'
+      ]
+    },
+    { 
+      name: 'Products', 
+      id: 'products',
+      dropdown: [
+        'Organic Essential Oils',
+        'Conventional Essential Oils',
+        'Aroma Chemicals'
+      ]
+    },
     { name: 'Industries', id: 'industries' },
     { name: 'Contact Us', id: 'contact-us' },
   ];
@@ -169,17 +210,17 @@ const ModernAromatics = () => {
             <div className="flex items-center space-x-6">
               <div className="flex items-center space-x-2">
                 <Phone className="w-4 h-4" />
-                <span>+91 94490 44326</span>
+                <span>+91 88649 80972</span>
               </div>
             </div>
             <div className="flex items-center space-x-4">
               <span className="hidden sm:inline">International Sales:</span>
               <a href="mailto:info@saaromatics.com" className="hover:text-green-200 transition-colors">
-                info@saaromatics.com
+                info@gaziaeromatics.com
               </a>
               <span className="hidden sm:inline">|</span>
               <a href="mailto:sales@saaromatics.com" className="hover:text-green-200 transition-colors">
-                sales@saaromatics.com
+                sales@gaziaeromatics.com
               </a>
             </div>
           </div>
@@ -203,23 +244,44 @@ const ModernAromatics = () => {
               </div>
               <div>
                 <h1 className="text-2xl xl:text-3xl font-bold bg-gradient-to-r from-emerald-700 to-green-600 bg-clip-text text-transparent">
-                  Anandateertha
+                  Gazi
                 </h1>
-                <p className="text-sm text-gray-600 font-medium tracking-wide">AROMATICS</p>
+                <p className="text-sm text-gray-600 font-medium tracking-wide">AEROMATICS</p>
               </div>
             </div>
 
             <nav className="hidden lg:flex items-center space-x-1">
               {navItems.map((item) => (
-                <button
+                <div
                   key={item.name}
-                  onClick={() => scrollToSection(item.id)}
-                  className={`px-4 py-2 text-gray-700 hover:text-emerald-600 font-medium transition-all duration-200 rounded-lg hover:bg-emerald-50 text-sm font-semibold tracking-wide ${
-                    activeSection === item.id ? 'text-emerald-600 bg-emerald-50' : ''
-                  }`}
+                  className="relative group"
+                  onMouseEnter={() => handleMouseEnter(item.id)}
+                  onMouseLeave={handleMouseLeave}
                 >
-                  {item.name}
-                </button>
+                  <button
+                    onClick={() => scrollToSection(item.id)}
+                    className={`px-4 py-2 text-gray-700 hover:text-emerald-600 font-medium transition-all duration-200 rounded-lg hover:bg-emerald-50 text-sm font-semibold tracking-wide ${
+                      activeSection === item.id ? 'text-emerald-600 bg-emerald-50' : ''
+                    }`}
+                  >
+                    {item.name}
+                  </button>
+                  {item.dropdown && openDropdown === item.id && (
+                    <ul className="absolute left-0 top-full mt-2 w-60 bg-white shadow-xl rounded-lg border border-gray-100 z-50 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                      {item.dropdown.map((dropdownItem, index) => (
+                        <li
+                          key={index}
+                          className="px-4 py-3 text-gray-700 hover:bg-emerald-50 hover:text-emerald-600 transition-colors duration-200 cursor-pointer text-sm font-medium"
+                          onClick={() => scrollToSection(item.id)}
+                          onMouseEnter={() => handleMouseEnter(item.id)}
+                          onMouseLeave={handleMouseLeave}
+                        >
+                          {dropdownItem}
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </div>
               ))}
             </nav>
 
@@ -257,13 +319,27 @@ const ModernAromatics = () => {
             <div className="lg:hidden border-t border-gray-100 bg-white">
               <nav className="py-4 space-y-1">
                 {navItems.map((item) => (
-                  <button
-                    key={item.name}
-                    onClick={() => scrollToSection(item.id)}
-                    className="w-full flex items-center justify-between px-4 py-3 text-gray-700 hover:text-emerald-600 hover:bg-emerald-50 rounded-lg transition-colors font-medium text-left text-sm font-semibold tracking-wide"
-                  >
-                    {item.name}
-                  </button>
+                  <div key={item.name}>
+                    <button
+                      onClick={() => scrollToSection(item.id)}
+                      className="w-full flex items-center justify-between px-4 py-3 text-gray-700 hover:text-emerald-600 hover:bg-emerald-50 rounded-lg transition-colors font-medium text-left text-sm font-semibold tracking-wide"
+                    >
+                      {item.name}
+                    </button>
+                    {item.dropdown && (
+                      <ul className="pl-6 space-y-1">
+                        {item.dropdown.map((dropdownItem, index) => (
+                          <li
+                            key={index}
+                            className="px-4 py-2 text-gray-600 hover:text-emerald-600 hover:bg-emerald-50 rounded-lg transition-colors text-sm"
+                            onClick={() => scrollToSection(item.id)}
+                          >
+                            {dropdownItem}
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                  </div>
                 ))}
                 
                 <div className="pt-4 border-t border-gray-100 space-y-4 px-4">
@@ -392,7 +468,7 @@ const ModernAromatics = () => {
             <div className="space-y-8">
               <div>
                 <h2 className="text-5xl font-bold text-gray-900 mb-6">
-                  <span className="text-emerald-600">Anandateertha</span> Aromatics
+                  <span className="text-emerald-600">Gazi</span> Aeromatics
                 </h2>
                 <p className="text-lg text-gray-600 leading-relaxed mb-8">
                   Since 2001, we've been pioneers in ethical sourcing and organic farming. Our partnership with over 2,500 dedicated farmers across India spans Karnataka, Tamil Nadu, Kerala, Andhra Pradesh, Odisha, Chhattisgarh, Haryana, and Uttar Pradesh.
@@ -669,7 +745,7 @@ const ModernAromatics = () => {
                 </div>
                 <div>
                   <h3 className="text-xl font-bold bg-gradient-to-r from-emerald-400 to-green-400 bg-clip-text text-transparent">
-                    Anandateertha Aromatics
+                    Gazi Aeromatics
                   </h3>
                   <p className="text-sm text-gray-300">Crafting Purity Since 2001</p>
                 </div>
@@ -684,66 +760,72 @@ const ModernAromatics = () => {
               <ul className="space-y-4 text-gray-300 text-sm">
                 <li className="flex items-start space-x-2">
                   <MapPin className="w-5 h-5 mt-1" />
-                  <span>Sy No. 56 and 57, Vijayaraja Estate, Chokkanahalli, Jakkur Post, Bangalore - 560064, Karnataka, India</span>
+                  <span> Badaun - 243601,Uttar Pradesh, India</span>
                 </li>
                 <li className="flex items-center space-x-2">
                   <Phone className="w-5 h-5" />
-                  <a href="tel:+919449044326" className="hover:text-emerald-400 transition-colors">+91 94490 44326</a>
+                  <a href="tel:+919449044326" className="hover:text-emerald-400 transition-colors">+91 88649 80972</a>
                 </li>
                 <li className="flex items-center space-x-2">
                   <Mail className="w-5 h-5" />
-                  <a href="mailto:info@saaromatics.com" className="hover:text-emerald-400 transition-colors">info@saaromatics.com</a>
+                  <a href="mailto:info@saaromatics.com" className="hover:text-emerald-400 transition-colors">info@gaziaeromatics.com</a>
                 </li>
                 <li className="flex items-center space-x-2">
                   <Mail className="w-5 h-5" />
-                  <a href="mailto:sales@saaromatics.com" className="hover:text-emerald-400 transition-colors">sales@saaromatics.com</a>
+                  <a href="mailto:sales@saaromatics.com" className="hover:text-emerald-400 transition-colors">sales@gaziaeromatics.com</a>
                 </li>
               </ul>
             </div>
 
             <div>
-              <h3 className="text-lg font-semibold mb-6 uppercase tracking-wide text-emerald-400">Information</h3>
+              <h3 className="text-lg font-semibold mb-6 uppercase tracking-wide text-emerald-400">Quick Links</h3>
               <ul className="space-y-4 text-gray-300 text-sm">
-                {['About Us', 'Contact Us', 'Products', 'Privacy Policy', 'Terms Of Use'].map((item) => (
+                {['About Us', 'Expertise', 'Products', 'Industries', 'Contact Us'].map((item) => (
                   <li key={item}>
-                    <a href="#" className="hover:text-emerald-400 transition-colors">{item}</a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div>
-              <h3 className="text-lg font-semibold mb-6 uppercase tracking-wide text-emerald-400">Products</h3>
-              <ul className="space-y-4 text-gray-300 text-sm">
-                {['Organic Essential Oil', 'Conventional Essential Oil', 'Aroma Chemicals'].map((item) => (
-                  <li key={item}>
-                    <a href="#" className="hover:text-emerald-400 transition-colors">{item}</a>
-                  </li>
-                ))}
-              </ul>
-              <div className="mt-6">
-                <h3 className="text-lg font-semibold mb-4 uppercase tracking-wide text-emerald-400">Connect With Us</h3>
-                <div className="flex space-x-3">
-                  {[
-                    { icon: Facebook, color: 'hover:bg-blue-500' },
-                    { icon: Instagram, color: 'hover:bg-pink-500' },
-                    { icon: Linkedin, color: 'hover:bg-blue-600' }
-                  ].map(({ icon: Icon, color }, index) => (
-                    <a
-                      key={index}
-                      href="#"
-                      className={`w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center text-gray-300 hover:text-white transition-all duration-200 transform hover:scale-110 ${color}`}
+                    <button
+                      onClick={() => scrollToSection(item.toLowerCase().replace(' ', '-'))}
+                      className="hover:text-emerald-400 transition-colors"
                     >
-                      <Icon className="w-5 h-5" />
-                    </a>
-                  ))}
-                </div>
+                      {item}
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div>
+              <h3 className="text-lg font-semibold mb-6 uppercase tracking-wide text-emerald-400">Connect With Us</h3>
+              <div className="flex space-x-3 mb-6">
+                {[
+                  { icon: Facebook, color: 'hover:bg-blue-500' },
+                  { icon: Instagram, color: 'hover:bg-pink-500' },
+                  { icon: Linkedin, color: 'hover:bg-blue-600' }
+                ].map(({ icon: Icon, color }, index) => (
+                  <a
+                    key={index}
+                    href="#"
+                    className={`w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center text-gray-300 hover:text-white transition-all duration-200 transform hover:scale-110 ${color}`}
+                  >
+                    <Icon className="w-5 h-5" />
+                  </a>
+                ))}
               </div>
+              <h3 className="text-lg font-semibold mb-4 uppercase tracking-wide text-emerald-400">Newsletter</h3>
+              <form className="space-y-4">
+                <input
+                  type="email"
+                  placeholder="Enter your email"
+                  className="w-full px-4 py-2 rounded-lg bg-gray-800 text-gray-300 border border-gray-700 focus:outline-none focus:border-emerald-400"
+                />
+                <button className="w-full bg-gradient-to-r from-emerald-500 to-green-600 text-white px-6 py-2 rounded-lg font-semibold hover:from-emerald-600 hover:to-green-700 transition-all duration-200">
+                  Subscribe
+                </button>
+              </form>
             </div>
           </div>
 
           <div className="border-t border-gray-700 pt-8 text-center text-gray-400 text-sm">
-            <p>Anandateertha Aromatics © 2022 Crafted by Fugensys</p>
+            <p>Gazi Aeromatics © 2025. All rights reserved. Crafted by Siddhartha.</p>
           </div>
         </div>
       </footer>
