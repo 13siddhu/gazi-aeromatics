@@ -4,6 +4,8 @@ import {
   Mail, Phone, Facebook, Instagram, Linkedin, Menu, X, ChevronRight, 
   Leaf, Award, Users, Factory, Shield, Heart, Zap, Globe, Star, ArrowUp, MapPin, CheckCircle
 } from 'lucide-react';
+import { BrowserRouter as Router, Routes, Route,useNavigate } from 'react-router-dom';
+
 
 const ModernAromatics = () => {
   const [activeSection, setActiveSection] = useState('home');
@@ -37,6 +39,13 @@ const ModernAromatics = () => {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
+
+  const navigate = useNavigate();
+
+  const aboutus = () => {
+  navigate('/aboutus');
+};
+
 
   const handleMouseEnter = (itemId) => {
     if (timeoutRef.current) {
