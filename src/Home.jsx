@@ -1,23 +1,37 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { 
-  Mail, Phone, Facebook, Instagram, Linkedin, Menu, X, ChevronRight, 
-  Leaf, Award, Users, Factory, Shield, Heart, Zap, Globe, Star, ArrowUp, MapPin, CheckCircle
+  ChevronRight, Leaf, Award, Users, Factory, Shield, Heart, Zap, 
+  Globe, ArrowUp, CheckCircle
 } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
-const ModernAromatics = () => {
+// Import the Header and Footer components
+import Header from './components/partials/header';
+import Footer from './components/partials/footer';
+
+const Home = () => {
   const [activeSection, setActiveSection] = useState('home');
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [showScrollTop, setShowScrollTop] = useState(false);
-  const [openDropdown, setOpenDropdown] = useState(null); // Track open dropdown
-  const timeoutRef = useRef(null); // Reference for timeout
+  const [openDropdown, setOpenDropdown] = useState(null);
+  const timeoutRef = useRef(null);
 
   useEffect(() => {
     const handleScroll = () => {
       const offset = window.scrollY;
       setScrolled(offset > 50);
       setShowScrollTop(offset > 500);
+
+      const sections = document.querySelectorAll('section');
+      let currentSection = 'home';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        if (offset >= sectionTop - 100) {
+          currentSection = section.id;
+        }
+      });
+      setActiveSection(currentSection);
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
@@ -28,9 +42,9 @@ const ModernAromatics = () => {
     element?.scrollIntoView({ behavior: 'smooth' });
     setActiveSection(sectionId);
     setIsMenuOpen(false);
-    setOpenDropdown(null); // Close dropdown on section click
+    setOpenDropdown(null);
     if (timeoutRef.current) {
-      clearTimeout(timeoutRef.current); // Clear any pending timeout
+      clearTimeout(timeoutRef.current);
     }
   };
 
@@ -40,15 +54,15 @@ const ModernAromatics = () => {
 
   const handleMouseEnter = (itemId) => {
     if (timeoutRef.current) {
-      clearTimeout(timeoutRef.current); // Clear timeout if re-entering
+      clearTimeout(timeoutRef.current);
     }
     setOpenDropdown(itemId);
   };
 
   const handleMouseLeave = () => {
     timeoutRef.current = setTimeout(() => {
-      setOpenDropdown(null); // Close dropdown after 500ms
-    }, 500); // 500ms delay
+      setOpenDropdown(null);
+    }, 500);
   };
 
   const industries = [
@@ -127,31 +141,31 @@ const ModernAromatics = () => {
       name: 'About Us', 
       id: 'about-us',
       dropdown: [
-        'About Gazi Aeromatics',
-        'Certifications'
+        { name: 'About Gazi Aeromatics', link: '/aboutus' },
+        { name: 'Certifications', link: '/aboutus' }
       ]
     },
     { 
       name: 'Expertise', 
       id: 'expertise',
       dropdown: [
-        'Sourcing',
-        'Research and Innovation',
-        'Manufacturing Capabilities',
-        'Packaging'
+        { name: 'Sourcing', link: '#sourcing' },
+        { name: 'Research and Innovation', link: '#research-and-innovation' },
+        { name: 'Manufacturing Capabilities', link: '#manufacturing-capabilities' },
+        { name: 'Packaging', link: '#packaging' }
       ]
     },
     { 
       name: 'Products', 
       id: 'products',
       dropdown: [
-        'Organic Essential Oils',
-        'Conventional Essential Oils',
-        'Aroma Chemicals'
+        { name: 'Organic Essential Oils', link: '#organic-essential-oils' },
+        { name: 'Conventional Essential Oils', link: '#conventional-essential-oils' },
+        { name: 'Aroma Chemicals', link: '#aroma-chemicals' }
       ]
     },
-    { name: 'Industries', id: 'industries' },
-    { name: 'Contact Us', id: 'contact-us' },
+    { name: 'Industries', id: 'industries', link: '#industries' },
+    { name: 'Contact Us', id: 'contact-us', link: '#contact-us' },
   ];
 
   return (
@@ -202,168 +216,19 @@ const ModernAromatics = () => {
           background-repeat: repeat;
         }
       `}</style>
-
-      {/* Top Contact Bar */}
-      <div className="bg-gradient-to-r from-emerald-600 to-green-600 text-white">
-        <div className="max-w-7xl mx-auto px-4 py-2.5">
-          <div className="flex items-center justify-between text-sm">
-            <div className="flex items-center space-x-6">
-              <div className="flex items-center space-x-2">
-                <Phone className="w-4 h-4" />
-                <span>+91 88649 80972</span>
-              </div>
-            </div>
-            <div className="flex items-center space-x-4">
-              <span className="hidden sm:inline">International Sales:</span>
-              <a href="mailto:info@saaromatics.com" className="hover:text-green-200 transition-colors">
-                info@gaziaeromatics.com
-              </a>
-              <span className="hidden sm:inline">|</span>
-              <a href="mailto:sales@saaromatics.com" className="hover:text-green-200 transition-colors">
-                sales@gaziaeromatics.com
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Header */}
-      <header className={`sticky top-0 z-50 transition-all duration-300 ${
-        scrolled 
-          ? 'bg-white/95 backdrop-blur-lg shadow-xl border-b border-gray-100' 
-          : 'bg-white shadow-md'
-      }`}>
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="flex items-center justify-between h-20">
-            <div className="flex items-center space-x-4">
-              <div className="relative">
-                <div className="w-14 h-14 bg-gradient-to-br from-emerald-500 to-green-600 rounded-2xl flex items-center justify-center shadow-lg transform hover:scale-105 transition-transform duration-200">
-                  <Leaf className="w-7 h-7 text-white" />
-                </div>
-                <div className="absolute -top-1 -right-1 w-4 h-4 bg-amber-400 rounded-full animate-pulse"></div>
-              </div>
-              <div>
-                <h1 className="text-2xl xl:text-3xl font-bold bg-gradient-to-r from-emerald-700 to-green-600 bg-clip-text text-transparent">
-                  Gazi
-                </h1>
-                <p className="text-sm text-gray-600 font-medium tracking-wide">AEROMATICS</p>
-              </div>
-            </div>
-
-            <nav className="hidden lg:flex items-center space-x-1">
-              {navItems.map((item) => (
-                <div
-                  key={item.name}
-                  className="relative group"
-                  onMouseEnter={() => handleMouseEnter(item.id)}
-                  onMouseLeave={handleMouseLeave}
-                >
-                  <button
-                    onClick={() => scrollToSection(item.id)}
-                    className={`px-4 py-2 text-gray-700 hover:text-emerald-600 font-medium transition-all duration-200 rounded-lg hover:bg-emerald-50 text-sm font-semibold tracking-wide ${
-                      activeSection === item.id ? 'text-emerald-600 bg-emerald-50' : ''
-                    }`}
-                  >
-                    {item.name}
-                  </button>
-                  {item.dropdown && openDropdown === item.id && (
-                    <ul className="absolute left-0 top-full mt-2 w-60 bg-white shadow-xl rounded-lg border border-gray-100 z-50 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
-                      {item.dropdown.map((dropdownItem, index) => (
-                        <li
-                          key={index}
-                          className="px-4 py-3 text-gray-700 hover:bg-emerald-50 hover:text-emerald-600 transition-colors duration-200 cursor-pointer text-sm font-medium"
-                          onClick={() => {
-                            if (dropdownItem === 'About Gazi Aeromatics' || dropdownItem === 'Certifications') {
-                              scrollToSection('about-us');
-                            } else {
-                              scrollToSection(item.id);
-                            }
-                          }}
-                          onMouseEnter={() => handleMouseEnter(item.id)}
-                          onMouseLeave={handleMouseLeave}
-                        >
-                          {dropdownItem}
-                        </li>
-                      ))}
-                    </ul>
-                  )}
-                </div>
-              ))}
-            </nav>
-
-            <div className="hidden lg:flex items-center space-x-4">
-              <button className="bg-gradient-to-r from-emerald-500 to-green-600 text-white px-6 py-2.5 rounded-xl font-semibold hover:from-emerald-600 hover:to-green-700 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 text-sm tracking-wide">
-                REQUEST SAMPLE
-              </button>
-              
-              <div className="flex items-center space-x-2 pl-4 border-l border-gray-200">
-                {[
-                  { icon: Facebook, color: 'hover:bg-blue-500' },
-                  { icon: Instagram, color: 'hover:bg-pink-500' },
-                  { icon: Linkedin, color: 'hover:bg-blue-600' }
-                ].map(({ icon: Icon, color }, index) => (
-                  <a
-                    key={index}
-                    href="#"
-                    className={`w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center text-gray-600 hover:text-white transition-all duration-200 transform hover:scale-110 ${color}`}
-                  >
-                    <Icon className="w-4 h-4" />
-                  </a>
-                ))}
-              </div>
-            </div>
-
-            <button
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="lg:hidden p-2 text-gray-700 hover:text-emerald-600 hover:bg-emerald-50 rounded-lg transition-colors"
-            >
-              {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-            </button>
-          </div>
-
-          {isMenuOpen && (
-            <div className="lg:hidden border-t border-gray-100 bg-white">
-              <nav className="py-4 space-y-1">
-                {navItems.map((item) => (
-                  <div key={item.name}>
-                    <button
-                      onClick={() => scrollToSection(item.id)}
-                      className="w-full flex items-center justify-between px-4 py-3 text-gray-700 hover:text-emerald-600 hover:bg-emerald-50 rounded-lg transition-colors font-medium text-left text-sm font-semibold tracking-wide"
-                    >
-                      {item.name}
-                    </button>
-                    {item.dropdown && (
-                      <ul className="pl-6 space-y-1">
-                        {item.dropdown.map((dropdownItem, index) => (
-                          <li
-                            key={index}
-                            className="px-4 py-2 text-gray-600 hover:text-emerald-600 hover:bg-emerald-50 rounded-lg transition-colors text-sm cursor-pointer"
-                            onClick={() => {
-                              if (dropdownItem === 'About Gazi Aeromatics' || dropdownItem === 'Certifications') {
-                                scrollToSection('about-us');
-                              } else {
-                                scrollToSection(item.id);
-                              }
-                            }}
-                          >
-                            {dropdownItem}
-                          </li>
-                        ))}
-                      </ul>
-                    )}
-                  </div>
-                ))}
-                
-                <div className="pt-4 border-t border-gray-100 space-y-4 px-4">
-                  <button className="w-full bg-gradient-to-r from-emerald-500 to-green-600 text-white px-6 py-3 rounded-xl font-semibold shadow-lg hover:from-emerald-600 hover:to-green-700 transition-all duration-200">
-                    REQUEST SAMPLE
-                  </button>
-                </div>
-              </nav>
-            </div>
-          )}
-        </div>
-      </header>
+      
+      {/* Use the new Header component */}
+      <Header
+        activeSection={activeSection}
+        isMenuOpen={isMenuOpen}
+        setIsMenuOpen={setIsMenuOpen}
+        scrolled={scrolled}
+        navItems={navItems}
+        scrollToSection={scrollToSection}
+        handleMouseEnter={handleMouseEnter}
+        handleMouseLeave={handleMouseLeave}
+        openDropdown={openDropdown}
+      />
 
       {/* Hero Section */}
       <section id="home" className="relative min-h-screen flex items-center bg-gradient-to-br from-emerald-50 via-green-50 to-teal-50 overflow-hidden">
@@ -407,13 +272,12 @@ const ModernAromatics = () => {
               </div>
 
               <div className="flex flex-wrap gap-4 pt-4">
-                <button 
-                  onClick={() => scrollToSection('about-us')}
+                <Link to="/aboutus"
                   className="bg-gradient-to-r from-emerald-500 to-green-600 text-white px-8 py-4 rounded-xl font-semibold hover:from-emerald-600 hover:to-green-700 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-1 flex items-center space-x-2"
                 >
                   <span>Discover Our Story</span>
                   <ChevronRight className="w-5 h-5" />
-                </button>
+                </Link>
                 <button 
                   onClick={() => scrollToSection('products')}
                   className="border-2 border-emerald-500 text-emerald-600 px-8 py-4 rounded-xl font-semibold hover:bg-emerald-50 transition-all duration-200 flex items-center space-x-2"
@@ -746,111 +610,8 @@ const ModernAromatics = () => {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer id="contact-us" className="bg-gradient-to-br from-gray-900 to-emerald-900 text-white py-24 relative">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
-            <div className="space-y-6">
-              <div className="flex items-center space-x-4">
-                <div className="w-14 h-14 bg-gradient-to-br from-emerald-500 to-green-600 rounded-2xl flex items-center justify-center shadow-lg">
-                  <Leaf className="w-7 h-7 text-white" />
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold bg-gradient-to-r from-emerald-400 to-green-400 bg-clip-text text-transparent">
-                    Gazi Aeromatics
-                  </h3>
-                  <p className="text-sm text-gray-300">Crafting Purity Since 2001</p>
-                </div>
-              </div>
-              <p className="text-gray-300 leading-relaxed">
-                Trusted globally for premium essential oils and sustainable practices.
-              </p>
-            </div>
-
-            <div>
-              <h3 className="text-lg font-semibold mb-6 uppercase tracking-wide text-emerald-400">Contact Us</h3>
-              <ul className="space-y-4 text-gray-300 text-sm">
-                <li className="flex items-start space-x-2">
-                  <MapPin className="w-5 h-5 mt-1" />
-                  <span> Badaun - 243601,Uttar Pradesh, India</span>
-                </li>
-                <li className="flex items-center space-x-2">
-                  <Phone className="w-5 h-5" />
-                  <a href="tel:+919449044326" className="hover:text-emerald-400 transition-colors">+91 88649 80972</a>
-                </li>
-                <li className="flex items-center space-x-2">
-                  <Mail className="w-5 h-5" />
-                  <a href="mailto:info@saaromatics.com" className="hover:text-emerald-400 transition-colors">info@gaziaeromatics.com</a>
-                </li>
-                <li className="flex items-center space-x-2">
-                  <Mail className="w-5 h-5" />
-                  <a href="mailto:sales@saaromatics.com" className="hover:text-emerald-400 transition-colors">sales@gaziaeromatics.com</a>
-                </li>
-              </ul>
-            </div>
-
-            <div>
-              <h3 className="text-lg font-semibold mb-6 uppercase tracking-wide text-emerald-400">Quick Links</h3>
-              <ul className="space-y-4 text-gray-300 text-sm">
-                <li key="home">
-                  <button onClick={() => scrollToSection('home')} className="hover:text-emerald-400 transition-colors">
-                    Home
-                  </button>
-                </li>
-                <li key="about">
-                  <button onClick={() => scrollToSection('about-us')} className="hover:text-emerald-400 transition-colors">
-                    About Us
-                  </button>
-                </li>
-                {['Expertise', 'Products', 'Industries', 'Contact Us'].map((item) => (
-                  <li key={item}>
-                    <button
-                      onClick={() => scrollToSection(item.toLowerCase().replace(' ', '-'))}
-                      className="hover:text-emerald-400 transition-colors"
-                    >
-                      {item}
-                    </button>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div>
-              <h3 className="text-lg font-semibold mb-6 uppercase tracking-wide text-emerald-400">Connect With Us</h3>
-              <div className="flex space-x-3 mb-6">
-                {[
-                  { icon: Facebook, color: 'hover:bg-blue-500' },
-                  { icon: Instagram, color: 'hover:bg-pink-500' },
-                  { icon: Linkedin, color: 'hover:bg-blue-600' }
-                ].map(({ icon: Icon, color }, index) => (
-                  <a
-                    key={index}
-                    href="#"
-                    className={`w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center text-gray-300 hover:text-white transition-all duration-200 transform hover:scale-110 ${color}`}
-                  >
-                    <Icon className="w-5 h-5" />
-                  </a>
-                ))}
-              </div>
-              <h3 className="text-lg font-semibold mb-4 uppercase tracking-wide text-emerald-400">Newsletter</h3>
-              <form className="space-y-4">
-                <input
-                  type="email"
-                  placeholder="Enter your email"
-                  className="w-full px-4 py-2 rounded-lg bg-gray-800 text-gray-300 border border-gray-700 focus:outline-none focus:border-emerald-400"
-                />
-                <button className="w-full bg-gradient-to-r from-emerald-500 to-green-600 text-white px-6 py-2 rounded-lg font-semibold hover:from-emerald-600 hover:to-green-700 transition-all duration-200">
-                  Subscribe
-                </button>
-              </form>
-            </div>
-          </div>
-
-          <div className="border-t border-gray-700 pt-8 text-center text-gray-400 text-sm">
-            <p>Gazi Aeromatics © 2025. All rights reserved. Crafted by Siddhartha.</p>
-          </div>
-        </div>
-      </footer>
+      {/* Use the new Footer component */}
+      <Footer scrollToSection={scrollToSection} />
 
       {/* Scroll to Top Button */}
       {showScrollTop && (
@@ -865,4 +626,4 @@ const ModernAromatics = () => {
   );
 };
 
-export default ModernAromatics;
+export default Home;
