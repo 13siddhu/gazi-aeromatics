@@ -16,10 +16,10 @@ const Header = ({ isMenuOpen, setIsMenuOpen, scrolled, activeSection, openDropdo
       name: 'Expertise', 
       id: 'expertise',
       dropdown: [
-        { name: 'Sourcing', link: '#sourcing' },
-        { name: 'Research and Innovation', link: '#research-and-innovation' },
-        { name: 'Manufacturing Capabilities', link: '#manufacturing-capabilities' },
-        { name: 'Packaging', link: '#packaging' }
+        { name: 'Sourcing', link: '/sourcing' },
+        { name: 'Research and Innovation', link: '/reasearch' },
+        { name: 'Manufacturing Capabilities', link: '/manufacturing' },
+        { name: 'Packaging', link: '/packaging' }
       ]
     },
     { 
