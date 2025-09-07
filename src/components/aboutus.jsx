@@ -55,7 +55,7 @@ const AboutUsPage = () => {
       name: 'About Us', 
       id: 'about-us',
       dropdown: [
-        'About Anandateertha Aromatics',
+        'About Gazi Aeromatics',
         'Certifications'
       ]
     },
@@ -150,12 +150,12 @@ const AboutUsPage = () => {
             </div>
             <div className="flex items-center space-x-4">
               <span className="hidden sm:inline">International Sales:</span>
-              <a href="mailto:info@saaromatics.com" className="hover:text-green-200 transition-colors">
-                info@saaromatics.com
+              <a href="mailto:info@gaziaeromatics.com" className="hover:text-green-200 transition-colors">
+                info@gaziaeromatics.com
               </a>
               <span className="hidden sm:inline">|</span>
-              <a href="mailto:sales@saaromatics.com" className="hover:text-green-200 transition-colors">
-                sales@saaromatics.com
+              <a href="mailto:sales@gaziaeromatics.com" className="hover:text-green-200 transition-colors">
+                sales@gaziaeromatics.com
               </a>
             </div>
           </div>
@@ -179,9 +179,9 @@ const AboutUsPage = () => {
               </div>
               <div>
                 <h1 className="text-2xl xl:text-3xl font-bold bg-gradient-to-r from-emerald-700 to-green-600 bg-clip-text text-transparent">
-                  Anandateertha
+                  GAZI
                 </h1>
-                <p className="text-sm text-gray-600 font-medium tracking-wide">AROMATICS</p>
+                <p className="text-sm text-gray-600 font-medium tracking-wide">AEROMATICS</p>
               </div>
             </div>
 
@@ -285,9 +285,9 @@ const AboutUsPage = () => {
                 <span className="bg-gradient-to-r from-emerald-600 to-green-600 bg-clip-text text-transparent">
                   About
                 </span>
-                <span className="text-gray-800"> Anandateertha </span>
+                <span className="text-gray-800"> Gazi </span>
                 <span className="bg-gradient-to-r from-amber-500 to-orange-500 bg-clip-text text-transparent">
-                  Aromatics
+                  Aeromatics
                 </span>
               </h1>
               <p className="text-2xl text-gray-600 font-medium max-w-4xl mx-auto">
@@ -323,7 +323,7 @@ const AboutUsPage = () => {
             <div className="space-y-8">
               <div className="text-lg text-gray-600 leading-relaxed space-y-6">
                 <p>
-                  We at <strong className="text-emerald-600">Anandateertha Aromatics</strong> are proud to be associated with over <strong>2,500 farmers</strong> across India, with our farms in <strong>Karnataka, Tamil Nadu, Kerala, Andhra Pradesh, Odisha, Chhattisgarh, Assam, Haryana and Uttar Pradesh</strong>. We ensure that the farmers we are associated with are practicing organic methods of farming.
+                  We at <strong className="text-emerald-600">Gazi Aeromatics</strong> are proud to be associated with over <strong>2,500 farmers</strong> across India, with our farms in <strong>Karnataka, Tamil Nadu, Kerala, Andhra Pradesh, Odisha, Chhattisgarh, Assam, Haryana and Uttar Pradesh</strong>. We ensure that the farmers we are associated with are practicing organic methods of farming.
                 </p>
                 
                 <p>
@@ -365,7 +365,7 @@ const AboutUsPage = () => {
           <div className="bg-white rounded-3xl p-12 shadow-xl">
             <div className="space-y-8 text-lg text-gray-600 leading-relaxed">
               <p>
-                <strong className="text-emerald-600">Anandateertha Aromatics Private Limited</strong> started its operations back in 2001 in the field of Aromatics and Medicinal plants with the help of CIMAP-Bangalore.
+                <strong className="text-emerald-600">Gazi Aeromatics Private Limited</strong> started its operations back in 2001 in the field of Aromatics and Medicinal plants with the help of CIMAP-Bangalore.
               </p>
               
               <p>
@@ -422,7 +422,7 @@ const AboutUsPage = () => {
                 </div>
                 <div>
                   <h3 className="text-xl font-bold bg-gradient-to-r from-emerald-400 to-green-400 bg-clip-text text-transparent">
-                    Anandateertha Aromatics
+                    Gazi Aeromatics
                   </h3>
                   <p className="text-sm text-gray-300">Crafting Purity Since 2001</p>
                 </div>
@@ -442,11 +442,11 @@ const AboutUsPage = () => {
                 </li>
                 <li className="flex items-center space-x-2">
                   <Mail className="w-5 h-5" />
-                  <a href="mailto:info@saaromatics.com" className="hover:text-emerald-400 transition-colors">info@saaromatics.com</a>
+                  <a href="mailto:info@gaziaeromatics.com" className="hover:text-emerald-400 transition-colors">info@gaziaeromatics.com</a>
                 </li>
                 <li className="flex items-center space-x-2">
                   <Mail className="w-5 h-5" />
-                  <a href="mailto:sales@saaromatics.com" className="hover:text-emerald-400 transition-colors">sales@saaromatics.com</a>
+                  <a href="mailto:sales@gaziaeromatics.com" className="hover:text-emerald-400 transition-colors">sales@gaziaeromatics.com</a>
                 </li>
               </ul>
             </div>
@@ -489,7 +489,7 @@ const AboutUsPage = () => {
           </div>
 
           <div className="border-t border-gray-700 pt-8 text-center text-gray-400 text-sm">
-            <p>Anandateertha Aromatics © 2022 Crafted by Fugensys</p>
+            <p>Gazi Aeromatics © 2022 Crafted by Fugensys</p>
           </div>
         </div>
       </footer>

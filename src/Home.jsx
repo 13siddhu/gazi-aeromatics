@@ -1,11 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
-import './App.css';
 import { 
   Mail, Phone, Facebook, Instagram, Linkedin, Menu, X, ChevronRight, 
   Leaf, Award, Users, Factory, Shield, Heart, Zap, Globe, Star, ArrowUp, MapPin, CheckCircle
 } from 'lucide-react';
-import { BrowserRouter as Router, Routes, Route,useNavigate } from 'react-router-dom';
-
+import { useNavigate } from 'react-router-dom';
 
 const ModernAromatics = () => {
   const [activeSection, setActiveSection] = useState('home');
@@ -39,13 +37,6 @@ const ModernAromatics = () => {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
-
-  const navigate = useNavigate();
-
-  const aboutus = () => {
-  navigate('/aboutus');
-};
-
 
   const handleMouseEnter = (itemId) => {
     if (timeoutRef.current) {
@@ -281,7 +272,13 @@ const ModernAromatics = () => {
                         <li
                           key={index}
                           className="px-4 py-3 text-gray-700 hover:bg-emerald-50 hover:text-emerald-600 transition-colors duration-200 cursor-pointer text-sm font-medium"
-                          onClick={() => scrollToSection(item.id)}
+                          onClick={() => {
+                            if (dropdownItem === 'About Gazi Aeromatics' || dropdownItem === 'Certifications') {
+                              scrollToSection('about-us');
+                            } else {
+                              scrollToSection(item.id);
+                            }
+                          }}
                           onMouseEnter={() => handleMouseEnter(item.id)}
                           onMouseLeave={handleMouseLeave}
                         >
@@ -340,8 +337,14 @@ const ModernAromatics = () => {
                         {item.dropdown.map((dropdownItem, index) => (
                           <li
                             key={index}
-                            className="px-4 py-2 text-gray-600 hover:text-emerald-600 hover:bg-emerald-50 rounded-lg transition-colors text-sm"
-                            onClick={() => scrollToSection(item.id)}
+                            className="px-4 py-2 text-gray-600 hover:text-emerald-600 hover:bg-emerald-50 rounded-lg transition-colors text-sm cursor-pointer"
+                            onClick={() => {
+                              if (dropdownItem === 'About Gazi Aeromatics' || dropdownItem === 'Certifications') {
+                                scrollToSection('about-us');
+                              } else {
+                                scrollToSection(item.id);
+                              }
+                            }}
                           >
                             {dropdownItem}
                           </li>
@@ -789,7 +792,17 @@ const ModernAromatics = () => {
             <div>
               <h3 className="text-lg font-semibold mb-6 uppercase tracking-wide text-emerald-400">Quick Links</h3>
               <ul className="space-y-4 text-gray-300 text-sm">
-                {['About Us', 'Expertise', 'Products', 'Industries', 'Contact Us'].map((item) => (
+                <li key="home">
+                  <button onClick={() => scrollToSection('home')} className="hover:text-emerald-400 transition-colors">
+                    Home
+                  </button>
+                </li>
+                <li key="about">
+                  <button onClick={() => scrollToSection('about-us')} className="hover:text-emerald-400 transition-colors">
+                    About Us
+                  </button>
+                </li>
+                {['Expertise', 'Products', 'Industries', 'Contact Us'].map((item) => (
                   <li key={item}>
                     <button
                       onClick={() => scrollToSection(item.toLowerCase().replace(' ', '-'))}
