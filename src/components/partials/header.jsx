@@ -26,9 +26,9 @@ const Header = ({ isMenuOpen, setIsMenuOpen, scrolled, activeSection, openDropdo
       name: 'Products', 
       id: 'products',
       dropdown: [
-        { name: 'Organic Essential Oils', link: '#organic-essential-oils' },
-        { name: 'Conventional Essential Oils', link: '#conventional-essential-oils' },
-        { name: 'Aroma Chemicals', link: '#aroma-chemicals' }
+        { name: 'Organic Essential Oils', link: '/organicoils' },
+        { name: 'Conventional Essential Oils', link: '/essentialoils' },
+        { name: 'Aroma Chemicals', link: '/chemicals' }
       ]
     },
     { name: 'Industries', id: 'industries', link: '#industries' },

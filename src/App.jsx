@@ -8,6 +8,10 @@ import Packaging from './components/Packaging';
 import Manufacturing from './components/manufacturing';
 import Reasearch from './components/ReasearchAndInnovation';
 import Sourcing from './components/Sourcing'; 
+import Chemicals from './components/Chemicals';
+import Essentialoils from './components/Essentialoils';
+import Organicoils from './components/Organicoils';
+
 
 function App() {
   return (
@@ -21,6 +25,9 @@ function App() {
         <Route path="/manufacturing" element={<Manufacturing />} />
         <Route path="/reasearch" element={<Reasearch />} />
         <Route path="/sourcing" element={<Sourcing />} />
+        <Route path = "/chemicals" element = {<Chemicals />} />
+        <Route path = "/essentialoils" element = {<Essentialoils />} />
+        <Route path = "/organicoils" element = {<Organicoils />} />        
       </Routes>
     </Router>
   );
