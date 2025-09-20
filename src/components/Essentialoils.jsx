@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import Header from './partials/header';
 import Footer from './partials/footer';
-import { Search, Filter, Star, ShoppingCart, Eye, Heart, ArrowRight, Leaf, Droplets } from 'lucide-react';
+import { Search, Filter, Leaf, Droplets } from 'lucide-react';
 
 const EssentialOils = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -17,134 +18,86 @@ const EssentialOils = () => {
     {
       id: 1,
       name: 'Ajwain Seed Oil',
+      slug: 'ajwain-seed-oil',
       image: '/api/placeholder/300/300',
-      category: 'seed',
-      description: 'Premium quality ajwain seed oil with therapeutic properties',
-      price: '$25.99',
-      rating: 4.8,
-      inStock: true,
-      benefits: ['Digestive support', 'Antimicrobial', 'Respiratory health']
+      category: 'seed'
     },
     {
       id: 2,
       name: 'Basil Oil',
+      slug: 'basil-oil',
       image: '/api/placeholder/300/300',
-      category: 'herbal',
-      description: 'Pure basil oil extracted from fresh basil leaves',
-      price: '$22.50',
-      rating: 4.7,
-      inStock: true,
-      benefits: ['Stress relief', 'Mental clarity', 'Immune support']
+      category: 'herbal'
     },
     {
       id: 3,
       name: 'Black Pepper Oil',
+      slug: 'black-pepper-oil',
       image: '/api/placeholder/300/300',
-      category: 'spice',
-      description: 'Concentrated black pepper oil with warming properties',
-      price: '$28.75',
-      rating: 4.9,
-      inStock: true,
-      benefits: ['Circulation', 'Digestive aid', 'Muscle relief']
+      category: 'spice'
     },
     {
       id: 4,
       name: 'Cardamom Oil',
+      slug: 'cardamom-oil',
       image: '/api/placeholder/300/300',
-      category: 'spice',
-      description: 'Aromatic cardamom oil with sweet and spicy notes',
-      price: '$35.00',
-      rating: 4.6,
-      inStock: true,
-      benefits: ['Digestive comfort', 'Fresh breath', 'Mood uplift']
+      category: 'spice'
     },
     {
       id: 5,
       name: 'Carrot Seed Oil',
+      slug: 'carrot-seed-oil',
       image: '/api/placeholder/300/300',
-      category: 'seed',
-      description: 'Nutrient-rich carrot seed oil for skincare applications',
-      price: '$42.99',
-      rating: 4.8,
-      inStock: false,
-      benefits: ['Skin rejuvenation', 'Anti-aging', 'UV protection']
+      category: 'seed'
     },
     {
       id: 6,
       name: 'Castor Oil',
+      slug: 'castor-oil',
       image: '/api/placeholder/300/300',
-      category: 'carrier',
-      description: 'Pure castor oil for hair and skin care',
-      price: '$18.25',
-      rating: 4.5,
-      inStock: true,
-      benefits: ['Hair growth', 'Skin moisturizing', 'Anti-inflammatory']
+      category: 'carrier'
     },
     {
       id: 7,
       name: 'Eucalyptus Oil',
+      slug: 'eucalyptus-oil',
       image: '/api/placeholder/300/300',
-      category: 'herbal',
-      description: 'Refreshing eucalyptus oil with cooling properties',
-      price: '$24.50',
-      rating: 4.9,
-      inStock: true,
-      benefits: ['Respiratory support', 'Mental clarity', 'Pain relief']
+      category: 'herbal'
     },
     {
       id: 8,
       name: 'Lavender Oil',
+      slug: 'lavender-oil',
       image: '/api/placeholder/300/300',
-      category: 'floral',
-      description: 'Premium lavender oil for relaxation and aromatherapy',
-      price: '$29.99',
-      rating: 5.0,
-      inStock: true,
-      benefits: ['Relaxation', 'Sleep support', 'Skin soothing']
+      category: 'floral'
     },
     {
       id: 9,
       name: 'Lemon Oil',
+      slug: 'lemon-oil',
       image: '/api/placeholder/300/300',
-      category: 'citrus',
-      description: 'Fresh lemon oil with uplifting citrus fragrance',
-      price: '$21.75',
-      rating: 4.7,
-      inStock: true,
-      benefits: ['Mood boost', 'Immune support', 'Natural cleanser']
+      category: 'citrus'
     },
     {
       id: 10,
       name: 'Peppermint Oil',
+      slug: 'peppermint-oil',
       image: '/api/placeholder/300/300',
-      category: 'herbal',
-      description: 'Cooling peppermint oil with invigorating properties',
-      price: '$26.50',
-      rating: 4.8,
-      inStock: true,
-      benefits: ['Digestive comfort', 'Mental alertness', 'Cooling relief']
+      category: 'herbal'
     },
     {
       id: 11,
       name: 'Rose Oil',
+      slug: 'rose-oil',
       image: '/api/placeholder/300/300',
-      category: 'floral',
-      description: 'Luxurious rose oil for premium skincare',
-      price: '$89.99',
-      rating: 4.9,
-      inStock: true,
-      benefits: ['Skin hydration', 'Anti-aging', 'Emotional balance']
+      category: 'floral'
     },
     {
       id: 12,
       name: 'Tea Tree Oil',
+      slug: 'tea-tree-oil',
       image: '/api/placeholder/300/300',
-      category: 'herbal',
-      description: 'Pure tea tree oil with powerful antimicrobial properties',
-      price: '$23.25',
-      rating: 4.8,
-      inStock: true,
-      benefits: ['Acne treatment', 'Antiseptic', 'Scalp health']
+      category: 'herbal'
     }
   ];
 
@@ -199,81 +152,27 @@ const EssentialOils = () => {
 
   const ProductCard = ({ oil }) => (
     <div className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 group overflow-hidden border border-gray-100">
-      <div className="relative overflow-hidden">
-        <img 
-          src={oil.image} 
-          alt={oil.name}
-          className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
-        />
-        <div className="absolute top-4 left-4">
-          {oil.inStock ? (
-            <span className="bg-green-500 text-white px-3 py-1 rounded-full text-xs font-semibold">
-              In Stock
-            </span>
-          ) : (
-            <span className="bg-red-500 text-white px-3 py-1 rounded-full text-xs font-semibold">
-              Out of Stock
-            </span>
-          )}
+      <Link to={`/${oil.slug}`} className="block">
+        <div className="relative overflow-hidden">
+          <img 
+            src={oil.image} 
+            alt={oil.name}
+            className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
+          />
         </div>
-        <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-          <button className="bg-white p-2 rounded-full shadow-lg hover:bg-gray-50 transition-colors">
-            <Heart className="w-4 h-4 text-gray-600" />
-          </button>
-        </div>
-        <div className="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center space-x-3">
-          <button className="bg-white p-3 rounded-full shadow-lg hover:bg-gray-50 transition-colors">
-            <Eye className="w-5 h-5 text-gray-700" />
-          </button>
-          <button className="bg-emerald-500 p-3 rounded-full shadow-lg hover:bg-emerald-600 transition-colors">
-            <ShoppingCart className="w-5 h-5 text-white" />
-          </button>
-        </div>
-      </div>
-      
-      <div className="p-6">
-        <div className="flex items-center justify-between mb-2">
-          <h3 className="text-lg font-semibold text-gray-900 group-hover:text-emerald-600 transition-colors">
+        
+        <div className="p-6">
+          <h3 className="text-lg font-semibold text-gray-900 group-hover:text-emerald-600 transition-colors mb-4">
             {oil.name}
           </h3>
-          <div className="flex items-center space-x-1">
-            <Star className="w-4 h-4 fill-amber-400 text-amber-400" />
-            <span className="text-sm text-gray-600">{oil.rating}</span>
+          
+          <div className="flex items-center justify-between">
+            <span className="text-emerald-600 font-semibold hover:text-emerald-700 transition-colors text-sm">
+              Read More
+            </span>
           </div>
         </div>
-        
-        <p className="text-gray-600 text-sm mb-4 line-clamp-2">
-          {oil.description}
-        </p>
-        
-        <div className="mb-4">
-          <div className="flex flex-wrap gap-1">
-            {oil.benefits.slice(0, 2).map((benefit, index) => (
-              <span key={index} className="bg-emerald-50 text-emerald-700 px-2 py-1 rounded text-xs font-medium">
-                {benefit}
-              </span>
-            ))}
-            {oil.benefits.length > 2 && (
-              <span className="bg-gray-100 text-gray-600 px-2 py-1 rounded text-xs">
-                +{oil.benefits.length - 2} more
-              </span>
-            )}
-          </div>
-        </div>
-        
-        <div className="flex items-center justify-between">
-          <div className="text-xl font-bold text-emerald-600">
-            {oil.price}
-          </div>
-          <button 
-            className="bg-gradient-to-r from-emerald-500 to-green-600 text-white px-4 py-2 rounded-lg font-semibold hover:from-emerald-600 hover:to-green-700 transition-all duration-200 flex items-center space-x-2 text-sm"
-            disabled={!oil.inStock}
-          >
-            <span>{oil.inStock ? 'Add to Cart' : 'Out of Stock'}</span>
-            {oil.inStock && <ArrowRight className="w-4 h-4" />}
-          </button>
-        </div>
-      </div>
+      </Link>
     </div>
   );
 
