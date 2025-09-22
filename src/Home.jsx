@@ -127,12 +127,6 @@ const Home = () => {
       title: 'White Labeling',
       desc: 'International brands leverage our quality for their private label products.',
       color: 'from-pink-500 to-rose-600'
-    },
-    {
-      icon: <Zap className="w-8 h-8" />,
-      title: 'R & D Excellence',
-      desc: '18% of gross profit invested in R&D annually for innovation and purity.',
-      color: 'from-indigo-500 to-purple-600'
     }
   ];
 
@@ -247,7 +241,7 @@ const Home = () => {
                   </span>
                 </h1>
                 <p className="text-2xl text-gray-600 font-medium">
-                  Our corporate philosophy driving excellence since 2001
+                  Our corporate philosophy driving excellence since 2010
                 </p>
                 <p className="text-lg text-gray-500 leading-relaxed max-w-lg">
                   Committed to ethical sourcing and organic farming practices, delivering premium essential oils worldwide with uncompromised quality.
@@ -347,11 +341,11 @@ const Home = () => {
                   <span className="text-emerald-600">Gazi</span> Aeromatics
                 </h2>
                 <p className="text-lg text-gray-600 leading-relaxed mb-8">
-                  Since 2001, we've been pioneers in ethical sourcing and organic farming. Our partnership with over 2,500 dedicated farmers across India spans Karnataka, Tamil Nadu, Kerala, Andhra Pradesh, Odisha, Chhattisgarh, Haryana, and Uttar Pradesh.
+                  Since 2010, we've been pioneers in ethical sourcing and organic farming. Our partnership with over 2,500 dedicated farmers across India spans Punjab, Bihar, and Uttar Pradesh.
                 </p>
                 <div className="bg-emerald-600 text-white p-6 rounded-2xl shadow-lg">
-                  <p className="font-semibold text-lg mb-2">6,000+ Acres</p>
-                  <p className="opacity-90">Organic farmland producing 350+ metric tonnes of natural essential oils annually</p>
+                  <p className="font-semibold text-lg mb-2">4,000+ Acres</p>
+                  <p className="opacity-90">Organic farmland producing 250+ metric tonnes of natural essential oils annually</p>
                 </div>
               </div>
               
@@ -366,7 +360,7 @@ const Home = () => {
 
             <div className="grid grid-cols-3 gap-8">
               {[
-                { icon: '💡', title: 'SINCE 2001', subtitle: 'Pioneering Excellence' },
+                { icon: '💡', title: 'SINCE 2010', subtitle: 'Pioneering Excellence' },
                 { icon: '✓', title: '100% AUTHENTIC', subtitle: '& NATURAL' },
                 { icon: '🌿', title: '100% PURE', subtitle: 'EMINENCE FOR PURITY' }
               ].map((item, index) => (
@@ -503,37 +497,6 @@ const Home = () => {
                 </div>
               </div>
             ))}
-          </div>
-
-          <div className="bg-white rounded-3xl p-12 shadow-xl">
-            <h3 className="text-3xl font-bold text-center text-gray-900 mb-12">
-              Featured <span className="text-emerald-600">Products</span>
-            </h3>
-            
-            <div className="grid md:grid-cols-2 gap-8">
-              {[
-                { name: 'Premium Neem Oil', icon: '🌿', gradient: 'from-green-400 to-emerald-600', desc: 'Pure, organic neem oil for versatile applications' },
-                { name: 'Ceylon Cinnamon Oil', icon: '🍃', gradient: 'from-amber-400 to-orange-600', desc: 'Rich, aromatic cinnamon oil for premium blends' }
-              ].map((product, index) => (
-                <div key={index} className="group cursor-pointer">
-                  <div className="flex items-center space-x-6 bg-gray-50 p-8 rounded-2xl hover:bg-white hover:shadow-lg transition-all duration-300 transform hover:-translate-y-2">
-                    <div className={`w-32 h-24 bg-gradient-to-br ${product.gradient} rounded-2xl flex items-center justify-center text-4xl shadow-lg group-hover:shadow-xl group-hover:scale-105 transition-all duration-300`}>
-                      {product.icon}
-                    </div>
-                    <div className="flex-1">
-                      <h4 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-emerald-600 transition-colors duration-200">
-                        {product.name}
-                      </h4>
-                      <p className="text-gray-600 mb-4">{product.desc}</p>
-                      <button className="text-emerald-600 font-semibold hover:text-emerald-700 transition-colors duration-200 flex items-center space-x-2 group-hover:translate-x-2 transform transition-transform duration-200">
-                        <span>Know More</span>
-                        <ChevronRight className="w-4 h-4" />
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
           </div>
         </div>
       </section>

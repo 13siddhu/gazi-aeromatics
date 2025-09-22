@@ -49,12 +49,12 @@ const Header = ({ isMenuOpen, setIsMenuOpen, scrolled, activeSection, openDropdo
             </div>
             <div className="flex items-center space-x-4">
               <span className="hidden sm:inline">International Sales:</span>
-              <a href="mailto:info@saaromatics.com" className="hover:text-green-200 transition-colors">
-                info@gaziaeromatics.com
+              <a href="mailto:gaziaeromatics@gmail.com" className="hover:text-green-200 transition-colors">
+                gaziaeromatics@gmail.com
               </a>
               <span className="hidden sm:inline">|</span>
-              <a href="mailto:sales@saaromatics.com" className="hover:text-green-200 transition-colors">
-                sales@gaziaeromatics.com
+              <a href="mailto:gaziaeromatics@gmail.com" className="hover:text-green-200 transition-colors">
+                gaziaeromatics@gmail.com
               </a>
             </div>
           </div>

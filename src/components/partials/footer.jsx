@@ -17,7 +17,7 @@ const Footer = ({ scrollToSection, showScrollTop, scrollToTop }) => {
                   <h3 className="text-xl font-bold bg-gradient-to-r from-emerald-400 to-green-400 bg-clip-text text-transparent">
                     Gazi Aeromatics
                   </h3>
-                  <p className="text-sm text-gray-300">Crafting Purity Since 2001</p>
+                  <p className="text-sm text-gray-300">Crafting Purity Since 2010</p>
                 </div>
               </div>
               <p className="text-gray-300 leading-relaxed">
@@ -38,11 +38,11 @@ const Footer = ({ scrollToSection, showScrollTop, scrollToTop }) => {
                 </li>
                 <li className="flex items-center space-x-2">
                   <Mail className="w-5 h-5" />
-                  <a href="mailto:info@saaromatics.com" className="hover:text-emerald-400 transition-colors">info@gaziaeromatics.com</a>
+                  <a href="mailto:info@saaromatics.com" className="hover:text-emerald-400 transition-colors">gaziaeromatics@gmail.com</a>
                 </li>
                 <li className="flex items-center space-x-2">
                   <Mail className="w-5 h-5" />
-                  <a href="mailto:sales@saaromatics.com" className="hover:text-emerald-400 transition-colors">sales@gaziaeromatics.com</a>
+                  <a href="mailto:sales@saaromatics.com" className="hover:text-emerald-400 transition-colors">gaziaeromatics@gmail.com</a>
                 </li>
               </ul>
             </div>
