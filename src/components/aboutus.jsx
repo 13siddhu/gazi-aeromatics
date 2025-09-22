@@ -99,8 +99,8 @@ const AboutUs = () => {
 
   const stats = [
     { number: '2500+', label: 'Associated Farmers', icon: '👥' },
-    { number: '6500+', label: 'Acres of Farmland', icon: '🌾' },
-    { number: '350+', label: 'Metric Tonnes/Year', icon: '⚖️' },
+    { number: '4000+', label: 'Acres of Farmland', icon: '🌾' },
+    { number: '250+', label: 'Metric Tonnes/Year', icon: '⚖️' },
     { number: '40+', label: 'Essential Oils', icon: '🧴' }
   ];
 
@@ -182,10 +182,10 @@ const AboutUs = () => {
                 </span>
               </h1>
               <p className="text-2xl text-gray-600 font-medium max-w-4xl mx-auto">
-                Leading the way in natural essential oils and aromatic solutions since 2001
+                Leading the way in natural essential oils and aromatic solutions since 2010
               </p>
               <p className="text-lg text-gray-500 leading-relaxed max-w-3xl mx-auto">
-                Pioneering organic farming practices with over 2,500 farmers across India, producing 350+ metric tonnes of premium essential oils annually.
+                Pioneering organic farming practices with over 2,500 farmers across India, producing 250+ metric tonnes of premium essential oils annually.
               </p>
             </div>
           </div>
@@ -214,11 +214,11 @@ const AboutUs = () => {
             <div className="space-y-8">
               <div className="text-lg text-gray-600 leading-relaxed space-y-6">
                 <p>
-                  We at <strong className="text-emerald-600">Gazi Aeromatics</strong> are proud to be associated with over <strong>2,500 farmers</strong> across India, with our farms in <strong>Karnataka, Tamil Nadu, Kerala, Andhra Pradesh, Odisha, Chhattisgarh, Assam, Haryana and Uttar Pradesh</strong>. We ensure that the farmers we are associated with are practicing organic methods of farming.
+                  We at <strong className="text-emerald-600">Gazi Aeromatics</strong> are proud to be associated with over <strong>2,500 farmers</strong> across India, with our farms in <strong>Punjab, Bihar and Uttar Pradesh</strong>. We ensure that the farmers we are associated with are practicing organic methods of farming.
                 </p>
                 
                 <p>
-                  We bank on the land of over <strong>6,500 acres</strong> across India, where we produce over <strong>350 Metric Tonnes of Natural Essential Oils</strong> every year.
+                  We bank on the land of over <strong>4,000 acres</strong> across India, where we produce over <strong>350 Metric Tonnes of Natural Essential Oils</strong> every year.
                 </p>
                 
                 <div className="bg-emerald-600 text-white p-6 rounded-2xl shadow-lg">
@@ -256,7 +256,7 @@ const AboutUs = () => {
           <div className="bg-white rounded-3xl p-12 shadow-xl">
             <div className="space-y-8 text-lg text-gray-600 leading-relaxed">
               <p>
-                <strong className="text-emerald-600">Gazi Aeromatics Private Limited</strong> started its operations back in 2001 in the field of Aromatics and Medicinal plants with the help of CIMAP-Bangalore.
+                <strong className="text-emerald-600">Gazi Aeromatics Private Limited</strong> started its operations back in 2010 in the field of Aromatics and Medicinal plants with the help of CIMAP-Bangalore.
               </p>
               
               <p>
@@ -279,7 +279,7 @@ const AboutUs = () => {
           <div className="grid lg:grid-cols-2 gap-16 items-center mb-16">
             <div className="space-y-8 text-lg text-gray-600 leading-relaxed">
               <p>
-                We have a robust infrastructural facility at <strong>Bengaluru in Karnataka</strong>, which is sprawled over a vast area of land. This facility helps us keep our business related processes in a systematic manner. We have outfitted technologically advanced machines and equipment in our manufacturing plant, which help us produce flawless products as per the prescribed industrial guidelines.
+                We have a robust infrastructural facility at <strong>Badaun in Uttar Pradesh</strong>, which is sprawled over a vast area of land. This facility helps us keep our business related processes in a systematic manner. We have outfitted technologically advanced machines and equipment in our manufacturing plant, which help us produce flawless products as per the prescribed industrial guidelines.
               </p>
               
               <p>
