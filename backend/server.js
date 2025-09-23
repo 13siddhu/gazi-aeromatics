@@ -42,11 +42,11 @@ app.post('/api/send-email', (req, res) => {
   });
 });
 
-// Serve static files from the frontend build directory
+// Serve static files from the frontend dist directory
 app.use(express.static(path.join(__dirname, '..', 'frontend', 'dist')));
 
-// The "catchall" handler: for any request that doesn't match an API route, send back the frontend's index.html
-app.get('/*', (req, res) => { // CHANGED THIS LINE
+// Serve index.html for the root route
+app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, '..', 'frontend', 'dist', 'index.html'));
 });
 
