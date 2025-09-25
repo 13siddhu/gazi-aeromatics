@@ -8,8 +8,7 @@ const Header = ({ isMenuOpen, setIsMenuOpen, scrolled, activeSection, openDropdo
       name: 'About Us', 
       id: 'about-us',
       dropdown: [
-        { name: 'About Gazi Aeromatics', link: '/aboutus' },
-        { name: 'Certifications', link: '/aboutus' }
+        { name: 'About Gazi Aeromatics', link: '/aboutus' }
       ]
     },
     { 
@@ -27,8 +26,7 @@ const Header = ({ isMenuOpen, setIsMenuOpen, scrolled, activeSection, openDropdo
       id: 'products',
       dropdown: [
         { name: 'Organic Essential Oils', link: '/organicoils' },
-        { name: 'Conventional Essential Oils', link: '/essentialoils' },
-        { name: 'Aroma Chemicals', link: '/chemicals' }
+        { name: 'Conventional Essential Oils', link: '/essentialoils' }
       ]
     },
     { name: 'Industries', id: 'industries', link: '#industries' },
@@ -44,7 +42,7 @@ const Header = ({ isMenuOpen, setIsMenuOpen, scrolled, activeSection, openDropdo
             <div className="flex items-center space-x-6">
               <div className="flex items-center space-x-2">
                 <Phone className="w-4 h-4" />
-                <span>+91 88649 80972</span>
+                <span>+91 9458879319</span>
               </div>
             </div>
             <div className="flex items-center space-x-4">
@@ -132,7 +130,7 @@ const Header = ({ isMenuOpen, setIsMenuOpen, scrolled, activeSection, openDropdo
               ))}
             </nav>
 
-            <div className="hidden lg:flex items-center space-x-4">
+            {/*<div className="hidden lg:flex items-center space-x-4">
               <button className="bg-gradient-to-r from-emerald-500 to-green-600 text-white px-6 py-2.5 rounded-xl font-semibold hover:from-emerald-600 hover:to-green-700 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 text-sm tracking-wide">
                 REQUEST SAMPLE
               </button>
@@ -152,7 +150,7 @@ const Header = ({ isMenuOpen, setIsMenuOpen, scrolled, activeSection, openDropdo
                   </a>
                 ))}
               </div>
-            </div>
+            </div>*/}
 
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
