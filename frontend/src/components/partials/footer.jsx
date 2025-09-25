@@ -71,7 +71,7 @@ const Footer = ({ scrollToSection, showScrollTop, scrollToTop }) => {
                 </li>
                 <li className="flex items-center space-x-2">
                   <Phone className="w-5 h-5" />
-                  <a href="tel:+919449044326" className="hover:text-emerald-400 transition-colors">+91 88649 80972</a>
+                  <a href="tel:+919837453889 " className="hover:text-emerald-400 transition-colors">+91 9837453889</a>
                 </li>
                 <li className="flex items-center space-x-2">
                   <Mail className="w-5 h-5" />
@@ -106,7 +106,7 @@ const Footer = ({ scrollToSection, showScrollTop, scrollToTop }) => {
               </ul>
             </div>
 
-            <div>
+            {/*<div>
               <h3 className="text-lg font-semibold mb-6 uppercase tracking-wide text-emerald-400">Connect With Us</h3>
               <div className="flex space-x-3 mb-6">
                 {[
@@ -169,11 +169,11 @@ const Footer = ({ scrollToSection, showScrollTop, scrollToTop }) => {
                   {isLoading ? 'Sending...' : 'Send Enquiry'}
                 </button>
               </form>
-            </div>
+            </div>*/}
           </div>
 
           <div className="border-t border-gray-700 pt-8 text-center text-gray-400 text-sm">
-            <p>Gazi Aeromatics © 2025. All rights reserved. Crafted by Siddhartha.</p>
+            <p>Gazi Aeromatics © 2025. All rights reserved</p>
           </div>
         </div>
       </footer>
