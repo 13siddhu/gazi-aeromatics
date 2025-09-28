@@ -241,10 +241,7 @@ const Packaging = () => {
               
               <div className="space-y-4 text-gray-600 leading-relaxed">
                 <p>
-                  All our packaging are tamper-proof and foolproof packaging of our products so that our essential oils and other aromatic products retain their aroma and freshness over an extended period of time. We make use of good quality material for packaging that we source only from the certified vendors who follow the industry's strict guidelines and adhere to the quality standards.
-                </p>
-                <p>
-                  We package our high value products in a manner so that they may tolerate the extremities of temperature variation and the harsh weather conditions during their transit to the customers location.
+                  Our tamper-proof and foolproof packaging ensures that our essential oils and aromatic products retain their aroma and freshness for an extended period. We use high-quality materials from certified vendors who adhere to strict industry standards. Our packaging is designed to withstand extreme temperatures and harsh weather conditions during transit.
                 </p>
               </div>
 
@@ -278,7 +275,7 @@ const Packaging = () => {
                   <div className="text-center">
                     <div className="text-8xl mb-4">📦</div>
                     <div className="bg-white rounded-lg p-4 shadow-lg">
-                      <div className="text-emerald-600 font-bold text-lg">Ghazi</div>
+                      <div className="text-emerald-600 font-bold text-lg">Gazi</div>
                       <div className="text-gray-600 text-sm">Aeromatics</div>
                       <div className="w-full h-8 bg-purple-600 rounded mt-3 flex items-center justify-center">
                         <span className="text-white text-xs font-bold">ESSENTIAL OIL</span>

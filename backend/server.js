@@ -1,16 +1,33 @@
-require('dotenv').config();
+const path = require('path'); // Import path module first
+require('dotenv').config({ path: path.join(__dirname, '.env') });
 const express = require('express');
 const nodemailer = require('nodemailer');
 const bodyParser = require('body-parser');
 const cors = require('cors');
-const path = require('path');
 
 const app = express();
-app.use(cors());
+
+// Debug environment variables
+console.log('GMAIL_USER:', process.env.GMAIL_USER);
+console.log('GMAIL_PASS:', process.env.GMAIL_PASS);
+
+// Get CORS origin from environment variable, fallback to localhost for development
+
+const FRONTEND_URL = process.env.FRONTEND_URL || 'http://localhost:5173';
+console.log('CORS Origin:', FRONTEND_URL);
+
+app.use(cors({
+  origin: FRONTEND_URL, 
+  methods: ['GET', 'POST'],
+  allowedHeaders: ['Content-Type'],
+}));
+
 app.use(bodyParser.json());
 
 const transporter = nodemailer.createTransport({
-  service: 'gmail',
+  host: 'smtp.gmail.com',
+  port: 587,
+  secure: false, // Use TLS
   auth: {
     user: process.env.GMAIL_USER,
     pass: process.env.GMAIL_PASS,
@@ -26,8 +43,8 @@ app.post('/api/send-email', (req, res) => {
 
   const mailOptions = {
     from: email,
-    to: 'singhsiddhartha220@gmail.com',
-    subject: subject || 'Request from siddhu',
+    to: 'mshariq824@gmail.com',
+    subject: subject || 'Update from Gazi Aeromatics',
     text: `You have a new enquiry from:\n\nName: ${name}\nEmail: ${email}\nSubject: ${subject}\nMessage: ${message}`,
   };
 

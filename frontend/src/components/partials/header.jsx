@@ -1,8 +1,18 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Mail, Phone, Facebook, Instagram, Linkedin, Menu, X, Leaf, ChevronRight } from 'lucide-react';
+import { Mail, Phone, Menu, X, Leaf, ChevronDown } from 'lucide-react';
 
-const Header = ({ isMenuOpen, setIsMenuOpen, scrolled, activeSection, openDropdown, setOpenDropdown, handleMouseEnter, handleMouseLeave, scrollToSection }) => {
+const Header = ({ 
+  isMenuOpen, 
+  setIsMenuOpen, 
+  scrolled, 
+  activeSection, 
+  openDropdown, 
+  setOpenDropdown, 
+  handleMouseEnter, 
+  handleMouseLeave, 
+  scrollToSection 
+}) => {
   const navItems = [
     { 
       name: 'About Us', 
@@ -16,7 +26,7 @@ const Header = ({ isMenuOpen, setIsMenuOpen, scrolled, activeSection, openDropdo
       id: 'expertise',
       dropdown: [
         { name: 'Sourcing', link: '/sourcing' },
-        { name: 'Research and Innovation', link: '/reasearch' },
+        { name: 'Research and Innovation', link: '/research' },
         { name: 'Manufacturing Capabilities', link: '/manufacturing' },
         { name: 'Packaging', link: '/packaging' }
       ]
@@ -29,8 +39,8 @@ const Header = ({ isMenuOpen, setIsMenuOpen, scrolled, activeSection, openDropdo
         { name: 'Conventional Essential Oils', link: '/essentialoils' }
       ]
     },
-    { name: 'Industries', id: 'industries', link: '#industries' },
-    { name: 'Contact Us', id: 'contact-us', link: '#contact-us' },
+    { name: 'Industries', id: 'industries' },
+    { name: 'Contact Us', id: 'contact-us' },
   ];
 
   return (
@@ -42,7 +52,7 @@ const Header = ({ isMenuOpen, setIsMenuOpen, scrolled, activeSection, openDropdo
             <div className="flex items-center space-x-6">
               <div className="flex items-center space-x-2">
                 <Phone className="w-4 h-4" />
-                <span>+91 9458879319</span>
+                <span>+91 9837453889</span>
               </div>
             </div>
             <div className="flex items-center space-x-4">
@@ -130,28 +140,6 @@ const Header = ({ isMenuOpen, setIsMenuOpen, scrolled, activeSection, openDropdo
               ))}
             </nav>
 
-            {/*<div className="hidden lg:flex items-center space-x-4">
-              <button className="bg-gradient-to-r from-emerald-500 to-green-600 text-white px-6 py-2.5 rounded-xl font-semibold hover:from-emerald-600 hover:to-green-700 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 text-sm tracking-wide">
-                REQUEST SAMPLE
-              </button>
-              
-              <div className="flex items-center space-x-2 pl-4 border-l border-gray-200">
-                {[
-                  { icon: Facebook, color: 'hover:bg-blue-500' },
-                  { icon: Instagram, color: 'hover:bg-pink-500' },
-                  { icon: Linkedin, color: 'hover:bg-blue-600' }
-                ].map(({ icon: Icon, color }, index) => (
-                  <a
-                    key={index}
-                    href="#"
-                    className={`w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center text-gray-600 hover:text-white transition-all duration-200 transform hover:scale-110 ${color}`}
-                  >
-                    <Icon className="w-4 h-4" />
-                  </a>
-                ))}
-              </div>
-            </div>*/}
-
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="lg:hidden p-2 text-gray-700 hover:text-emerald-600 hover:bg-emerald-50 rounded-lg transition-colors"
@@ -187,12 +175,6 @@ const Header = ({ isMenuOpen, setIsMenuOpen, scrolled, activeSection, openDropdo
                     )}
                   </div>
                 ))}
-                
-                <div className="pt-4 border-t border-gray-100 space-y-4 px-4">
-                  <button className="w-full bg-gradient-to-r from-emerald-500 to-green-600 text-white px-6 py-3 rounded-xl font-semibold shadow-lg hover:from-emerald-600 hover:to-green-700 transition-all duration-200">
-                    REQUEST SAMPLE
-                  </button>
-                </div>
               </nav>
             </div>
           )}

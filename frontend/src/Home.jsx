@@ -211,7 +211,7 @@ const Home = () => {
         }
       `}</style>
       
-      {/* Use the new Header component */}
+      {/* Header Component */}
       <Header
         activeSection={activeSection}
         isMenuOpen={isMenuOpen}
@@ -573,7 +573,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Use the new Footer component */}
+      {/* Footer Component */}
       <Footer scrollToSection={scrollToSection} />
 
       {/* Scroll to Top Button */}

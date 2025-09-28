@@ -6,7 +6,7 @@ import Header from './components/partials/header';
 import Footer from './components/partials/footer';
 import Packaging from './components/Packaging';
 import Manufacturing from './components/manufacturing';
-import Reasearch from './components/ReasearchAndInnovation';
+import Research from './components/ResearchAndInnovation';
 import Sourcing from './components/Sourcing'; 
 import Chemicals from './components/Chemicals';
 import Essentialoils from './components/Essentialoils';
@@ -23,7 +23,7 @@ function App() {
         <Route path="/footer" element={<Footer />} />
         <Route path="/packaging" element={<Packaging />} />
         <Route path="/manufacturing" element={<Manufacturing />} />
-        <Route path="/reasearch" element={<Reasearch />} />
+        <Route path="/research" element={<Research />} />
         <Route path="/sourcing" element={<Sourcing />} />
         <Route path = "/chemicals" element = {<Chemicals />} />
         <Route path = "/essentialoils" element = {<Essentialoils />} />

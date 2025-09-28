@@ -201,54 +201,8 @@ const ManufacturingCapabilities = () => {
             </div>
 
             {/* CO2 Extraction Section */}
-            <div className="space-y-6">
-              <h2 className="text-3xl font-bold text-gray-800">CO2 EXTRACTION</h2>
-              
-              <div className="grid lg:grid-cols-2 gap-8 items-start">
-                <div className="space-y-4 text-gray-600 leading-relaxed">
-                  <p>
-                    Essential oils derived from the supercritical CO2 extraction of herbs are similar to the oils produced through distillation in that they can be used in aromatherapy and natural perfumery.
-                  </p>
-                  <p>
-                    Oils derived from steam distillation vary in their qualities depending on the temperatures, pressures, and length of time applied for the process. The CO2 extraction process might thus produce higher quality oils that have not been altered by the application of high heat, unlike the steam distillation process. In CO2 extraction, none of the constituents of the oil are damaged by heat.
-                  </p>
-                  <p>
-                    Thus, the difference between traditional distillation and supercritical extraction is that instead of heated water or steam, CO2 is used as a solvent in the latter method.
-                  </p>
-                  <p>
-                    In steam distillation, the molecular composition of both the plant matter and the essential oil are changed due to the temperature applied. On the other hand, a CO2 extract is closer in chemical composition to the original plant from which it is derived, as it contains a wider range of the plant's constituents.
-                  </p>
-                  <p>
-                    CO2 extracts are usually thicker than their essential oil counterparts and often give off more of the aroma of the natural herb, spice, or plant than a distilled essential oil. CO2 extracts have been said to contain more plant constituents than the amount extracted from the same plant using steam distillation.
-                  </p>
-                </div>
-                <div className="bg-gray-100 rounded-lg p-4 h-80 flex items-center justify-center">
-                  <div className="text-center text-gray-500">
-                    <div className="text-6xl mb-4">🏭</div>
-                    <p className="text-sm">CO2 Extraction Equipment</p>
-                  </div>
-                </div>
-              </div>
-            </div>
 
             {/* Maceration Section */}
-            <div className="space-y-6">
-              <h2 className="text-3xl font-bold text-gray-800">MACERATION</h2>
-              
-              <div className="grid lg:grid-cols-2 gap-8 items-start">
-                <div className="bg-gray-100 rounded-lg p-4 h-64 flex items-center justify-center">
-                  <div className="text-center text-gray-500">
-                    <div className="text-6xl mb-4">🫙</div>
-                    <p className="text-sm">Maceration Equipment</p>
-                  </div>
-                </div>
-                <div className="space-y-4 text-gray-600 leading-relaxed">
-                  <p>
-                    Macerated oils are also referred to as infused oils. They are created when carrier oils are used as solvents to extract therapeutic properties from plant material. The benefit of a macerated oil above a distilled oil is that more of a plant's essence is captured in the oil, because it captures heavier, larger plant molecules than the ones captured in the distillation process. This keeps the product closer to retaining more of the plant's valuable offerings.
-                  </p>
-                </div>
-              </div>
-            </div>
           </div>
 
           {/* Sidebar */}

@@ -58,7 +58,7 @@ const Footer = ({ scrollToSection, showScrollTop, scrollToTop }) => {
                 </div>
               </div>
               <p className="text-gray-300 leading-relaxed">
-                Trusted globally for premium essential oils and sustainable practices.
+                Our tamper-proof, foolproof packaging ensures our essential oils and aromatic products retain their aroma and freshness. Using high-quality materials from certified vendors, our packaging withstands extreme temperatures and harsh weather during transit.
               </p>
             </div>
 
@@ -67,19 +67,19 @@ const Footer = ({ scrollToSection, showScrollTop, scrollToTop }) => {
               <ul className="space-y-4 text-gray-300 text-sm">
                 <li className="flex items-start space-x-2">
                   <MapPin className="w-5 h-5 mt-1" />
-                  <span> Badaun - 243601, Uttar Pradesh, India</span>
+                  <span>Badaun - 243601, Uttar Pradesh, India</span>
                 </li>
                 <li className="flex items-center space-x-2">
                   <Phone className="w-5 h-5" />
-                  <a href="tel:+919837453889 " className="hover:text-emerald-400 transition-colors">+91 9837453889</a>
+                  <a href="tel:+919837453889" className="hover:text-emerald-400 transition-colors">+91 9837453889</a>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <Phone className="w-5 h-5" />
+                  <a href="tel:+919458879319" className="hover:text-emerald-400 transition-colors">+91 9458879319</a>
                 </li>
                 <li className="flex items-center space-x-2">
                   <Mail className="w-5 h-5" />
-                  <a href="mailto:info@saaromatics.com" className="hover:text-emerald-400 transition-colors">gaziaeromatics@gmail.com</a>
-                </li>
-                <li className="flex items-center space-x-2">
-                  <Mail className="w-5 h-5" />
-                  <a href="mailto:sales@saaromatics.com" className="hover:text-emerald-400 transition-colors">gaziaeromatics@gmail.com</a>
+                  <a href="mailto:gaziaeromatics@gmail.com" className="hover:text-emerald-400 transition-colors">gaziaeromatics@gmail.com</a>
                 </li>
               </ul>
             </div>
@@ -106,7 +106,7 @@ const Footer = ({ scrollToSection, showScrollTop, scrollToTop }) => {
               </ul>
             </div>
 
-            {/*<div>
+            <div>
               <h3 className="text-lg font-semibold mb-6 uppercase tracking-wide text-emerald-400">Connect With Us</h3>
               <div className="flex space-x-3 mb-6">
                 {[
@@ -124,7 +124,7 @@ const Footer = ({ scrollToSection, showScrollTop, scrollToTop }) => {
                 ))}
               </div>
               <h3 className="text-lg font-semibold mb-4 uppercase tracking-wide text-emerald-400">Enquiry Form</h3>
-              <form onSubmit={handleSubmit} className="space-y-4">
+              <div className="space-y-4">
                 <input
                   type="text"
                   name="name"
@@ -162,18 +162,18 @@ const Footer = ({ scrollToSection, showScrollTop, scrollToTop }) => {
                   className="w-full px-4 py-2 rounded-lg bg-gray-800 text-gray-300 border border-gray-700 focus:outline-none focus:border-emerald-400"
                 />
                 <button
-                  type="submit"
+                  onClick={handleSubmit}
                   disabled={isLoading}
                   className={`w-full bg-gradient-to-r from-emerald-500 to-green-600 text-white px-6 py-2 rounded-lg font-semibold hover:from-emerald-600 hover:to-green-700 transition-all duration-200 ${isLoading ? 'opacity-50 cursor-not-allowed' : ''}`}
                 >
                   {isLoading ? 'Sending...' : 'Send Enquiry'}
                 </button>
-              </form>
-            </div>*/}
+              </div>
+            </div>
           </div>
 
           <div className="border-t border-gray-700 pt-8 text-center text-gray-400 text-sm">
-            <p>Gazi Aeromatics © 2025. All rights reserved</p>
+            <p>Gazi Aeromatics © 2025. All rights reserved.</p>
           </div>
         </div>
       </footer>

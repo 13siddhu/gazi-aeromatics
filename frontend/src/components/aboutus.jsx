@@ -101,7 +101,7 @@ const AboutUs = () => {
     { number: '2500+', label: 'Associated Farmers', icon: '👥' },
     { number: '4000+', label: 'Acres of Farmland', icon: '🌾' },
     { number: '250+', label: 'Metric Tonnes/Year', icon: '⚖️' },
-    { number: '40+', label: 'Essential Oils', icon: '🧴' }
+    { number: '', label: 'Essential Oils', icon: '🧴' }
   ];
 
   return (
@@ -218,7 +218,7 @@ const AboutUs = () => {
                 </p>
                 
                 <p>
-                  We bank on the land of over <strong>4,000 acres</strong> across India, where we produce over <strong>350 Metric Tonnes of Natural Essential Oils</strong> every year.
+                  We bank on the land of over <strong>4,000 acres</strong> across India, where we produce over <strong>250 Metric Tonnes of Natural Essential Oils</strong> every year.
                 </p>
                 
                 <div className="bg-emerald-600 text-white p-6 rounded-2xl shadow-lg">
@@ -256,7 +256,7 @@ const AboutUs = () => {
           <div className="bg-white rounded-3xl p-12 shadow-xl">
             <div className="space-y-8 text-lg text-gray-600 leading-relaxed">
               <p>
-                <strong className="text-emerald-600">Gazi Aeromatics Private Limited</strong> started its operations back in 2010 in the field of Aromatics and Medicinal plants with the help of CIMAP-Bangalore.
+                <strong className="text-emerald-600">Gazi Aeromatics</strong> started its operations back in 2010 in the field of Aromatics and Medicinal plants.
               </p>
               
               <p>
@@ -283,7 +283,7 @@ const AboutUs = () => {
               </p>
               
               <p>
-                Our manufacturing plant holds a <strong>high production capacity of minimum 1 ton per day</strong>. Our testing unit is installed with latest facilities such as <strong>G.C. from reputed Laboratories</strong> which help us ensure the quality standards of our products.
+                Our testing unit is installed with latest facilities such as <strong>G.C. from reputed Laboratories</strong> which help us ensure the quality standards of our products.
               </p>
             </div>
 
