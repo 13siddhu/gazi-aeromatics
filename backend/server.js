@@ -59,12 +59,9 @@ app.post('/api/send-email', (req, res) => {
   });
 });
 
-// Serve static files from the frontend dist directory
-app.use(express.static(path.join(__dirname, '..', 'frontend', 'dist')));
-
-// Serve index.html for the root route
+// Add a simple route so the Render URL doesn't return a 404/error on the root path
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, '..', 'frontend', 'dist', 'index.html'));
+  res.status(200).send('Gazi Aeromatics API is running successfully!');
 });
 
 const PORT = process.env.PORT || 3001;
