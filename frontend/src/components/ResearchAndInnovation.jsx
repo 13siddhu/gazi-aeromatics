@@ -172,7 +172,7 @@ const ResearchAndInnovation = () => {
             <div>
               <div className="space-y-6 text-gray-600 leading-relaxed mb-12">
                 <p>
-                  Anandateertha Aromatics is backed by a full-fledged research facility staffed with a team of Chemists, Chemical Engineers, Lab technicians and consulting Scientists, who are in constant pursuit of innovations of products for our global customers. Our focus on innovations is aimed to provide our customers the full benefits of the products while maintaining sustainability. advanced methods of extraction are applied for extracting ingredients at their purest best. We work with various government and private research labs across the country to exchange ideas and advancement in techniques to improve the raw material quality.
+                  Gazi Aeromatics is backed by a full-fledged research facility staffed with a team of Chemists, Chemical Engineers, Lab technicians and consulting Scientists, who are in constant pursuit of innovations of products for our global customers. Our focus on innovations is aimed to provide our customers the full benefits of the products while maintaining sustainability. advanced methods of extraction are applied for extracting ingredients at their purest best. We work with various government and private research labs across the country to exchange ideas and advancement in techniques to improve the raw material quality.
                 </p>
               </div>
 

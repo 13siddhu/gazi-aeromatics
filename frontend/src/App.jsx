@@ -10,7 +10,7 @@ import Research from './components/ResearchAndInnovation';
 import Sourcing from './components/Sourcing'; 
 import Chemicals from './components/Chemicals';
 import Essentialoils from './components/Essentialoils';
-import Organicoils from './components/Organicoils';
+import Certificates from './components/Certificates';
 
 
 function App() {
@@ -27,7 +27,7 @@ function App() {
         <Route path="/sourcing" element={<Sourcing />} />
         <Route path = "/chemicals" element = {<Chemicals />} />
         <Route path = "/essentialoils" element = {<Essentialoils />} />
-        <Route path = "/organicoils" element = {<Organicoils />} />        
+        <Route path = "/certificate" element = {<Certificates />} />
       </Routes>
     </Router>
   );

@@ -18,7 +18,8 @@ const Header = ({
       name: 'About Us', 
       id: 'about-us',
       dropdown: [
-        { name: 'About Gazi Aeromatics', link: '/aboutus' }
+        { name: 'About Gazi Aeromatics', link: '/aboutus' },
+        { name: 'Certifications', link: '/certificate' }
       ]
     },
     { 
@@ -35,11 +36,9 @@ const Header = ({
       name: 'Products', 
       id: 'products',
       dropdown: [
-        { name: 'Organic Essential Oils', link: '/organicoils' },
-        { name: 'Conventional Essential Oils', link: '/essentialoils' }
+        { name: 'Essential Oils', link: '/essentialoils' }
       ]
     },
-    { name: 'Industries', id: 'industries' },
     { name: 'Contact Us', id: 'contact-us' },
   ];
 
