@@ -4,6 +4,23 @@ import Header from './partials/header';
 import Footer from './partials/footer';
 import { Search, Filter, Leaf, Droplets } from 'lucide-react';
 
+// --- IMAGE IMPORTS ---
+// Make sure images exist in src/assets/products/
+// If you don't have local images yet, these imports will error. 
+// Comment them out and use the URL version if you are still testing.
+import ajwainImg from '../assets/products/ajwain.jpg';
+import basilImg from '../assets/products/basil.jpg';
+import blackPepperImg from '../assets/products/black-pepper.jpg';
+import cardamomImg from '../assets/products/cardamom.jpg';
+import carrotSeedImg from '../assets/products/carrot-seed.jpg';
+import castorImg from '../assets/products/castor.jpg';
+import eucalyptusImg from '../assets/products/eucalyptus.jpg';
+import lavenderImg from '../assets/products/lavender.jpg';
+import lemonImg from '../assets/products/lemon.jpg';
+import peppermintImg from '../assets/products/peppermint.jpg';
+import roseImg from '../assets/products/rose.jpg';
+import teaTreeImg from '../assets/products/tea-tree.jpg';
+
 const EssentialOils = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -13,90 +30,90 @@ const EssentialOils = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('all');
 
-  // Essential oils data
+  // Essential oils data using IMPORTED images
   const essentialOils = [
     {
       id: 1,
       name: 'Ajwain Seed Oil',
       slug: 'ajwain-seed-oil',
-      image: '/api/placeholder/300/300',
+      image: ajwainImg, // Uses the imported variable
       category: 'seed'
     },
     {
       id: 2,
       name: 'Basil Oil',
       slug: 'basil-oil',
-      image: '/api/placeholder/300/300',
+      image: basilImg,
       category: 'herbal'
     },
     {
       id: 3,
       name: 'Black Pepper Oil',
       slug: 'black-pepper-oil',
-      image: '/api/placeholder/300/300',
+      image: blackPepperImg,
       category: 'spice'
     },
     {
       id: 4,
       name: 'Cardamom Oil',
       slug: 'cardamom-oil',
-      image: '/api/placeholder/300/300',
+      image: cardamomImg,
       category: 'spice'
     },
     {
       id: 5,
       name: 'Carrot Seed Oil',
       slug: 'carrot-seed-oil',
-      image: '/api/placeholder/300/300',
+      image: carrotSeedImg,
       category: 'seed'
     },
     {
       id: 6,
       name: 'Castor Oil',
       slug: 'castor-oil',
-      image: '/api/placeholder/300/300',
+      image: castorImg,
       category: 'carrier'
     },
     {
       id: 7,
       name: 'Eucalyptus Oil',
       slug: 'eucalyptus-oil',
-      image: '/api/placeholder/300/300',
+      image: eucalyptusImg,
       category: 'herbal'
     },
     {
       id: 8,
       name: 'Lavender Oil',
       slug: 'lavender-oil',
-      image: '/api/placeholder/300/300',
+      image: lavenderImg,
       category: 'floral'
     },
     {
       id: 9,
       name: 'Lemon Oil',
       slug: 'lemon-oil',
-      image: '/api/placeholder/300/300',
+      image: lemonImg,
       category: 'citrus'
     },
     {
       id: 10,
       name: 'Peppermint Oil',
       slug: 'peppermint-oil',
-      image: '/api/placeholder/300/300',
+      image: peppermintImg,
       category: 'herbal'
     },
     {
       id: 11,
       name: 'Rose Oil',
       slug: 'rose-oil',
-      image: '/api/placeholder/300/300',
+      image: roseImg,
       category: 'floral'
     },
     {
       id: 12,
       name: 'Tea Tree Oil',
       slug: 'tea-tree-oil',
-      image: '/api/placeholder/300/300',
+      image: teaTreeImg,
       category: 'herbal'
     }
   ];
@@ -151,24 +168,33 @@ const EssentialOils = () => {
   });
 
   const ProductCard = ({ oil }) => (
-    <div className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 group overflow-hidden border border-gray-100">
-      <Link to={`/${oil.slug}`} className="block">
-        <div className="relative overflow-hidden">
+    <div className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 group overflow-hidden border border-gray-100 flex flex-col h-full">
+      <Link to={`/${oil.slug}`} className="block h-full flex flex-col">
+        <div className="relative overflow-hidden h-64">
           <img 
             src={oil.image} 
             alt={oil.name}
-            className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
+            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+            // Fallback for missing images to prevent broken layout
+            onError={(e) => {
+              e.target.src = 'https://via.placeholder.com/300?text=No+Image'; 
+            }}
           />
         </div>
         
-        <div className="p-6">
-          <h3 className="text-lg font-semibold text-gray-900 group-hover:text-emerald-600 transition-colors mb-4">
-            {oil.name}
-          </h3>
+        <div className="p-6 flex-grow flex flex-col justify-between">
+          <div>
+            <span className="text-xs font-bold text-emerald-600 uppercase tracking-wider mb-2 block">
+              {oil.category}
+            </span>
+            <h3 className="text-lg font-semibold text-gray-900 group-hover:text-emerald-600 transition-colors mb-2">
+              {oil.name}
+            </h3>
+          </div>
           
-          <div className="flex items-center justify-between">
-            <span className="text-emerald-600 font-semibold hover:text-emerald-700 transition-colors text-sm">
-              Read More
+          <div className="flex items-center justify-between mt-4">
+            <span className="text-emerald-600 font-semibold hover:text-emerald-700 transition-colors text-sm flex items-center gap-1">
+              Read More <span className="group-hover:translate-x-1 transition-transform">→</span>
             </span>
           </div>
         </div>
