@@ -8,18 +8,18 @@ import { Search, Filter, Leaf, Droplets } from 'lucide-react';
 // Make sure images exist in src/assets/products/
 // If you don't have local images yet, these imports will error. 
 // Comment them out and use the URL version if you are still testing.
-import ajwainImg from '../assets/products/ajwain.jpg';
-import basilImg from '../assets/products/basil.jpg';
-import blackPepperImg from '../assets/products/black-pepper.jpg';
-import cardamomImg from '../assets/products/cardamom.jpg';
-import carrotSeedImg from '../assets/products/carrot-seed.jpg';
-import castorImg from '../assets/products/castor.jpg';
-import eucalyptusImg from '../assets/products/eucalyptus.jpg';
-import lavenderImg from '../assets/products/lavender.jpg';
-import lemonImg from '../assets/products/lemon.jpg';
+import ajwainImg from '../assets/products/spearmint.jpg';
+import basilImg from '../assets/products/indianbasiloil.jpg';
+import blackPepperImg from '../assets/products/peppermint.jpg';
+import cardamomImg from '../assets/products/cornmint.jpg';
+import carrotSeedImg from '../assets/products/spearmint.jpg';
+import castorImg from '../assets/products/menths.jpg';
+import eucalyptusImg from '../assets/products/menths.jpg';
+import lavenderImg from '../assets/products/spearmint.jpg';
+import lemonImg from '../assets/products/lemongrass.jpg';
 import peppermintImg from '../assets/products/peppermint.jpg';
-import roseImg from '../assets/products/rose.jpg';
-import teaTreeImg from '../assets/products/tea-tree.jpg';
+import roseImg from '../assets/products/indianbasiloil.jpg';
+import teaTreeImg from '../assets/products/cornmint.jpg';
 
 const EssentialOils = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -255,7 +255,7 @@ const EssentialOils = () => {
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4">
           {/* Search and Filter Bar */}
-          <div className="bg-white rounded-2xl shadow-lg p-6 mb-12">
+          <div className="bg-black rounded-2xl shadow-lg p-6 mb-12">
             <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between space-y-4 lg:space-y-0 lg:space-x-6">
               <div className="relative flex-1 max-w-md">
                 <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
