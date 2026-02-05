@@ -8,18 +8,12 @@ import { Search, Filter, Leaf, Droplets } from 'lucide-react';
 // Make sure images exist in src/assets/products/
 // If you don't have local images yet, these imports will error. 
 // Comment them out and use the URL version if you are still testing.
-import ajwainImg from '../assets/products/spearmint.jpg';
 import basilImg from '../assets/products/indianbasiloil.jpg';
-import blackPepperImg from '../assets/products/peppermint.jpg';
-import cardamomImg from '../assets/products/cornmint.jpg';
-import carrotSeedImg from '../assets/products/spearmint.jpg';
-import castorImg from '../assets/products/menths.jpg';
-import eucalyptusImg from '../assets/products/menths.jpg';
-import lavenderImg from '../assets/products/spearmint.jpg';
+import spearmintImg from '../assets/products/spearmint.jpg';
+import cornmintImg from '../assets/products/cornmint.jpg';
+import mentha from '../assets/products/menths.jpg';
 import lemonImg from '../assets/products/lemongrass.jpg';
 import peppermintImg from '../assets/products/peppermint.jpg';
-import roseImg from '../assets/products/indianbasiloil.jpg';
-import teaTreeImg from '../assets/products/cornmint.jpg';
 
 const EssentialOils = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -32,88 +26,48 @@ const EssentialOils = () => {
 
   // Essential oils data using IMPORTED images
   const essentialOils = [
+
     {
       id: 1,
-      name: 'Ajwain Seed Oil',
-      slug: 'ajwain-seed-oil',
-      image: ajwainImg, // Uses the imported variable
-      category: 'seed'
-    },
-    {
-      id: 2,
       name: 'Basil Oil',
       slug: 'basil-oil',
       image: basilImg,
       category: 'herbal'
     },
     {
+      id: 2,
+      name: 'spearmint Oil',
+      slug: 'spearmint Oil',
+      image: spearmintImg,
+      category: 'spice'
+    },
+    {
       id: 3,
-      name: 'Black Pepper Oil',
-      slug: 'black-pepper-oil',
-      image: blackPepperImg,
-      category: 'spice'
-    },
-    {
-      id: 4,
-      name: 'Cardamom Oil',
-      slug: 'cardamom-oil',
-      image: cardamomImg,
-      category: 'spice'
-    },
-    {
-      id: 5,
-      name: 'Carrot Seed Oil',
-      slug: 'carrot-seed-oil',
-      image: carrotSeedImg,
-      category: 'seed'
-    },
-    {
-      id: 6,
-      name: 'Castor Oil',
-      slug: 'castor-oil',
-      image: castorImg,
-      category: 'carrier'
-    },
-    {
-      id: 7,
-      name: 'Eucalyptus Oil',
-      slug: 'eucalyptus-oil',
-      image: eucalyptusImg,
+      name: 'Cornmint Oil',
+      slug: 'cornmint-oil',
+      image: cornmintImg,
       category: 'herbal'
     },
     {
-      id: 8,
-      name: 'Lavender Oil',
-      slug: 'lavender-oil',
-      image: lavenderImg,
-      category: 'floral'
+      id: 4,
+      name: 'Mentha Oil',
+      slug: 'Mentha Oil',
+      image: mentha,
+      category: 'carrier'
     },
+
     {
-      id: 9,
+      id: 5,
       name: 'Lemon Oil',
       slug: 'lemon-oil',
       image: lemonImg,
       category: 'citrus'
     },
     {
-      id: 10,
+      id: 6,
       name: 'Peppermint Oil',
       slug: 'peppermint-oil',
       image: peppermintImg,
-      category: 'herbal'
-    },
-    {
-      id: 11,
-      name: 'Rose Oil',
-      slug: 'rose-oil',
-      image: roseImg,
-      category: 'floral'
-    },
-    {
-      id: 12,
-      name: 'Tea Tree Oil',
-      slug: 'tea-tree-oil',
-      image: teaTreeImg,
       category: 'herbal'
     }
   ];
