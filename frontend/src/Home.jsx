@@ -244,7 +244,7 @@ const Home = () => {
                   Our corporate philosophy driving excellence since 2010
                 </p>
                 <p className="text-lg text-gray-500 leading-relaxed max-w-lg">
-                  Committed to ethical sourcing and organic farming practices, delivering premium essential oils worldwide with uncompromised quality.
+                  Committed to ethical sourcing and Natural farming practices, delivering premium essential oils worldwide with uncompromised quality.
                 </p>
               </div>
 
@@ -341,11 +341,11 @@ const Home = () => {
                   <span className="text-emerald-600">Gazi</span> Aeromatics
                 </h2>
                 <p className="text-lg text-gray-600 leading-relaxed mb-8">
-                  Since 2010, we've been pioneers in ethical sourcing and organic farming. Our partnership with over 2,500 dedicated farmers across India spans Punjab, Bihar, and Uttar Pradesh.
+                  Since 2010, we've been pioneers in ethical sourcing and Natural farming. Our partnership with over 2,500 dedicated farmers across India spans Punjab, Bihar, and Uttar Pradesh.
                 </p>
                 <div className="bg-emerald-600 text-white p-6 rounded-2xl shadow-lg">
                   <p className="font-semibold text-lg mb-2">4,000+ Acres</p>
-                  <p className="opacity-90">Organic farmland producing 250+ metric tonnes of natural essential oils annually</p>
+                  <p className="opacity-90">Natural farmland producing 250+ metric tonnes of natural essential oils annually</p>
                 </div>
               </div>
               
@@ -385,7 +385,7 @@ const Home = () => {
               },
               {
                 title: 'Our Motto',
-                desc: 'Consistently delivering premium quality products through sustainable organic farming methods.',
+                desc: 'Consistently delivering premium quality products through sustainable Natural farming methods.',
                 icon: <Leaf className="w-8 h-8" />,
                 color: 'from-green-400 to-emerald-600'
               },
@@ -452,17 +452,17 @@ const Home = () => {
               Premium <span className="text-emerald-600">Product Range</span>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Discover our comprehensive collection of certified organic and conventional essential oils
+              Discover our comprehensive collection of certified Natural and conventional essential oils
             </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8 mb-20">
             {[
               { 
-                title: 'Organic Essential Oils', 
+                title: 'Natural Essential Oils', 
                 gradient: 'from-green-400 to-emerald-600', 
                 icon: '🌿',
-                desc: 'Certified organic oils from sustainable farming'
+                desc: 'Certified natural oils from sustainable farming'
               },
               { 
                 title: 'Conventional Oils', 

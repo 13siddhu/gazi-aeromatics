@@ -93,7 +93,7 @@ const Header = ({
               </Link>
             </div>
 
-            <nav className="hidden lg:flex items-center space-x-1">
+            <nav className="hidden lg:flex  items-center space-x-1">
               {navItems.map((item) => (
                 <div
                   key={item.name}
@@ -103,7 +103,7 @@ const Header = ({
                 >
                   {item.dropdown ? (
                     <button
-                      className={`px-4 py-2 text-gray-700 hover:text-emerald-600 font-medium transition-all duration-200 rounded-lg hover:bg-emerald-50 text-sm font-semibold tracking-wide ${
+                      className={`px-4 py-2 text-white-700 hover:text-emerald-600 font-medium transition-all duration-200 rounded-lg hover:bg-emerald-50 text-sm font-semibold tracking-wide ${
                         activeSection === item.id ? 'text-emerald-600 bg-emerald-50' : ''
                       }`}
                     >
@@ -112,7 +112,7 @@ const Header = ({
                   ) : (
                     <button
                       onClick={() => scrollToSection(item.id)}
-                      className={`px-4 py-2 text-gray-700 hover:text-emerald-600 font-medium transition-all duration-200 rounded-lg hover:bg-emerald-50 text-sm font-semibold tracking-wide ${
+                      className={`px-4 py-2 text-white-700 hover:text-emerald-600 font-medium transition-all duration-200 rounded-lg hover:bg-emerald-50 text-sm font-semibold tracking-wide ${
                         activeSection === item.id ? 'text-emerald-600 bg-emerald-50' : ''
                       }`}
                     >
@@ -154,7 +154,7 @@ const Header = ({
                   <div key={item.name}>
                     <button
                       onClick={() => scrollToSection(item.id)}
-                      className="w-full flex items-center justify-between px-4 py-3 text-gray-700 hover:text-emerald-600 hover:bg-emerald-50 rounded-lg transition-colors font-medium text-left text-sm font-semibold tracking-wide"
+                      className="w-full flex items-center justify-between px-4 py-3 text-white-700 hover:text-emerald-600 hover:bg-emerald-50 rounded-lg transition-colors font-medium text-left text-sm font-semibold tracking-wide"
                     >
                       {item.name}
                     </button>
@@ -163,7 +163,7 @@ const Header = ({
                         {item.dropdown.map((dropdownItem, index) => (
                           <li
                             key={index}
-                            className="px-4 py-2 text-gray-600 hover:text-emerald-600 hover:bg-emerald-50 rounded-lg transition-colors text-sm"
+                            className="px-4 py-2 text-white-600 hover:text-emerald-600 hover:bg-emerald-50 rounded-lg transition-colors text-sm"
                           >
                             <Link to={dropdownItem.link} onClick={() => setIsMenuOpen(false)}>
                               {dropdownItem.name}

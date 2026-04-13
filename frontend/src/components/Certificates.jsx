@@ -93,13 +93,6 @@ const Certifications = () => {
   // Certificate Data using imported images
   const certifications = [
     { 
-      name: 'USDA ORGANIC', 
-      description: 'Certified organic by the United States Department of Agriculture, ensuring our products are grown and processed according to federal guidelines.',
-      src: usdaLogo, 
-      color: 'border-green-700',
-      bg: 'bg-green-50'
-    },
-    { 
       name: 'KOSHER', 
       description: 'Certified to meet Jewish dietary laws, ensuring purity and suitability for Kosher-certified production lines.',
       src: kosherLogo, 
@@ -107,32 +100,11 @@ const Certifications = () => {
       bg: 'bg-gray-50'
     },
     { 
-      name: 'ISO 14001:2015', 
-      description: 'International standard that specifies requirements for an effective environmental management system (EMS).',
-      src: iso14001Logo, 
-      color: 'border-blue-600',
-      bg: 'bg-blue-50'
-    },
-    { 
       name: 'ISO 9001:2015', 
       description: 'Demonstrates our ability to consistently provide products and services that meet customer and regulatory requirements.',
       src: iso9001Logo,
       color: 'border-blue-800',
       bg: 'bg-blue-100'
-    },
-    { 
-      name: 'INDIA ORGANIC', 
-      description: 'Certification mark for organically farmed food products manufactured in India.',
-      src: indiaOrganicLogo,
-      color: 'border-orange-500',
-      bg: 'bg-orange-50'
-    },
-    { 
-      name: 'HALAL', 
-      description: 'Certified as permissible under Islamic law, ensuring no forbidden ingredients or processes are used.',
-      src: halalLogo,
-      color: 'border-emerald-600',
-      bg: 'bg-emerald-50'
     }
   ];
 

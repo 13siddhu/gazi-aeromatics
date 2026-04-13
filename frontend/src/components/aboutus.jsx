@@ -88,7 +88,7 @@ const AboutUs = () => {
       name: 'Products', 
       id: 'products',
       dropdown: [
-        'Organic Essential Oils',
+        'Natural Essential Oils',
         'Conventional Essential Oils',
         'Aroma Chemicals'
       ]
@@ -182,10 +182,10 @@ const AboutUs = () => {
                 </span>
               </h1>
               <p className="text-2xl text-gray-600 font-medium max-w-4xl mx-auto">
-                Leading the way in natural essential oils and aromatic solutions since 2010
+                Leading the way in natural essential oils and aromatic solutions since 1880
               </p>
               <p className="text-lg text-gray-500 leading-relaxed max-w-3xl mx-auto">
-                Pioneering organic farming practices with over 2,500 farmers across India, producing 250+ metric tonnes of premium essential oils annually.
+                Pioneering natural farming practices with over 2,500 farmers across India, producing 250+ metric tonnes of premium essential oils annually.
               </p>
             </div>
           </div>
@@ -214,7 +214,7 @@ const AboutUs = () => {
             <div className="space-y-8">
               <div className="text-lg text-gray-600 leading-relaxed space-y-6">
                 <p>
-                  We at <strong className="text-emerald-600">Gazi Aeromatics</strong> are proud to be associated with over <strong>2,500 farmers</strong> across India, with our farms in <strong>Punjab, Bihar and Uttar Pradesh</strong>. We ensure that the farmers we are associated with are practicing organic methods of farming.
+                  We at <strong className="text-emerald-600">Gazi Aeromatics</strong> are proud to be associated with over <strong>2,500 farmers</strong> across India, with our farms in <strong>Punjab, Bihar and Uttar Pradesh</strong>. We ensure that the farmers we are associated with are practicing Natural methods of farming.
                 </p>
                 
                 <p>
@@ -256,11 +256,11 @@ const AboutUs = () => {
           <div className="bg-white rounded-3xl p-12 shadow-xl">
             <div className="space-y-8 text-lg text-gray-600 leading-relaxed">
               <p>
-                <strong className="text-emerald-600">Gazi Aeromatics</strong> started its operations back in 2010 in the field of Aromatics and Medicinal plants.
+                <strong className="text-emerald-600">Gazi Aeromatics</strong> started its operations back in 1880 in the field of Aromatics and Medicinal plants.
               </p>
               
               <p>
-                We specialize in <strong>organic farming, cultivation, distillation, procurement, storage and distribution</strong> of over 40 essential oils in both conventional and organic segments. We are <strong>ISO 27001, US FDA, Halal, Kosher certified</strong> with our clients across, <strong>India, USA, Europe, Africa and the Middle East</strong>.
+                We specialize in <strong>natural farming, cultivation, distillation, procurement, storage and distribution</strong> of over 40 essential oils in both conventional and natural segments. We are <strong>ISO 27001, US FDA, Halal, Kosher certified</strong> with our clients across, <strong>India, USA, Europe, Africa and the Middle East</strong>.
               </p>
             </div>
           </div>

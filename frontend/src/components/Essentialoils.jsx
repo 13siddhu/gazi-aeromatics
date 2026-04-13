@@ -146,11 +146,6 @@ const EssentialOils = () => {
             </h3>
           </div>
           
-          <div className="flex items-center justify-between mt-4">
-            <span className="text-emerald-600 font-semibold hover:text-emerald-700 transition-colors text-sm flex items-center gap-1">
-              Read More <span className="group-hover:translate-x-1 transition-transform">→</span>
-            </span>
-          </div>
         </div>
       </Link>
     </div>
